@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+ 
+ <meta http-equiv="Content-Type" content="text/html;   charset=utf-8"/>
+ <meta name="keywords" content=""/>
+ <meta name="description" content="<Description>"/>
+ <meta name="author" content="Alex Knipper"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <title>Alex Knipper CSS Animations</title>
+ 
+ <link rel="shortcut icon" href="../../../images/logo/Alex Knipper Icon.ico"/>
+ 
+ <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Sans+TC|Noto+Serif|Noto+Serif+TC|Tangerine|Roboto|Raleway" rel="stylesheet">
+ 
+ <link type="text/css" rel="stylesheet" href="../../../stylesheets/style.css"/>
+ <link type="text/css" rel="stylesheet" href="../../../stylesheets/navbar.css"/>
+ <link type="text/css" rel="stylesheet" href="../../../stylesheets/footer.css"/>
+ <link type="text/css" rel="stylesheet" href="../../../stylesheets/pages/css-animations.css"/>
+
+ <link type="text/css" rel="stylesheet" href="../../../stylesheets/css-animations/gimbal-loader.css"/>
+ <link type="text/css" rel="stylesheet" href="../../../stylesheets/css-animations/arcane-loader.css"/>
+
+ <script src="../../../scripts/utilities/child-utilities.js"></script>
+ <script src="../../../scripts/css-animations/arcane-loader.js"></script>
+ <script type="text/javascript">
+	function displayElementFullscreen(element)
+	{
+		var animation = element.innerHTML;
+		//var player = document.getElementById("fullscreenPlayer");
+		var container = document.getElementById("animationContainer");
+		var screensaver = document.getElementById("screenSaver");
+		
+		container.innerHTML = animation;
+		screensaver.style = "display:block;opacity:1;cursor:none"
+		screensaver.classList.add("animated");
+		
+		var promise = screensaver.requestFullscreen();
+		
+		if (promise)
+		{
+			setTimeout(function(){screensaver.onfullscreenchange = stopDisplayingFullscreen}, 500);
+		}
+		
+		// Start the summoning loop if the element getting fullscreened is looped
+		if (element.children[0].classList.contains('summoning-loop'))
+		{
+			startSummonLoop(document.getElementById('animationContainer'));
+		}
+	}
+	
+	function stopDisplayingFullscreen()
+	{
+		//var player = document.getElementById("fullscreenPlayer");
+		var container = document.getElementById("animationContainer");
+		var screensaver = document.getElementById("screenSaver");
+		
+		container.innerHTML = "";
+		screensaver.style = "";
+		screensaver.classList.remove("animated");
+		
+		document.exitFullscreen;
+		
+		screensaver.onfullscreenchange = function(){};
+	}
+
+	// ******************** Elegant Animation Ending ********************
+	function endAnimationRemoveClass(element, classToRemove)
+	{
+		for (i=0; i<element.children.length; i++)
+		{
+			if (!element.children[i].classList.contains('noChange'))
+			{
+				element.children[i].style.setProperty('--removed-class', classToRemove)
+				element.children[i].addEventListener('animationiteration', removeClassFromEventTarget)
+			}
+		}
+	}
+	
+	function removeClassFromEventTarget()
+	{
+		if (!this.classList.contains('noChange'))
+		{
+			this.classList.remove(getComputedStyle(this).getPropertyValue('--removed-class'));
+			this.removeEventListener('animationiteration', removeClassFromEventTarget);
+			this.style.removeProperty('--removed-class');
+		}
+	}
+ </script>
+ 
+ </head>
+ <body>
+	<!--Navbar Starts-->
+	<div id="KS5_navbar" class="rounded-left shadowed">
+		<div class="KS5_navbarLogo"><img class="KS5_navbarLogo" src="../../../images/logo/Alex Knipper Icon.png" alt="Alex Knipper Logo"/></div>
+		<div class="KS5_navbarLinks">
+			<div class="KS5_navbarOption"><p class="KS5_navbarOptionText" onclick="location.href='../../../'">Home</p></div>
+			<div class="KS5_navbarOption"><p class="KS5_navbarOptionText" onclick="location.href='../../resources'">Resources</p></div>
+			<div class="KS5_navbarOption"><p class="KS5_navbarOptionText" onclick="location.href='../../music'">Music</p></div>
+			<div class="KS5_navbarOption"><p class="KS5_navbarOptionText" onclick="location.href='../../projects'">Projects</p></div>
+		</div>
+	</div>
+	<div class="KS5_navbarNoCollision"></div>
+	<br/>
+	<!--Navbar Ends-->
+	<div id="screenSaver">
+		<div id="fullscreenPlayer"></div>
+		<div id="screenDimmer">
+			<div id="animationContainer"></div>
+		</div>
+	</div>
+	<h1>CSS Animations</h1>
+	<p class="centered">Hover over an animation below to preview it. Click on an animation to preview it in fullscreen.</p>
+	<!--onmouseenter="addClassToChildren(this.children[0], 'animated-linear');" onmouseleave="removeClassFromChildren(this.children[0], 'animated-linear');"-->
+	<div class="animationContainer" onmouseenter="addClassToChildren(this.children[0], 'animated-linear');" onmouseleave="endAnimationRemoveClass(this.children[0], 'animated-linear');" onClick="displayElementFullscreen(this.children[0]);">
+		<div class="animation">
+			<div class="gimbal-ring10 " style="--color:rgba(0,0,0,0);--glow-color:violet"></div>
+			<div class="gimbal-ring9 " style="--color:rgba(0,0,0,0);--glow-color:mediumvioletred"></div>
+			<div class="gimbal-ring8 " style="--color:rgba(0,0,0,0);--glow-color:magenta"></div>
+			<div class="gimbal-ring7 " style="--color:rgba(0,0,0,0);--glow-color:blue"></div>
+			<div class="gimbal-ring6 " style="--color:rgba(0,0,0,0);--glow-color:aqua"></div>
+			<div class="gimbal-ring5 " style="--color:rgba(0,0,0,0);--glow-color:green"></div>
+			<div class="gimbal-ring4 " style="--color:rgba(0,0,0,0);--glow-color:springgreen"></div>
+			<div class="gimbal-ring3 " style="--color:rgba(0,0,0,0);--glow-color:gold"></div>
+			<div class="gimbal-ring2 " style="--color:rgba(0,0,0,0);--glow-color:orange"></div>
+			<div class="gimbal-ring1 " style="--color:rgba(0,0,0,0);--glow-color:red"></div>
+		</div>
+		<p class="animation">Gimbal Loader</p>
+	</div>
+	<div class="animationContainer" onmouseenter="addClassToChildren(this.children[0], 'animated-linear');" onmouseleave="endAnimationRemoveClass(this.children[0], 'animated-linear');" onClick="displayElementFullscreen(this.children[0])">
+		<div class="animation">
+			<div class="gimbal-ring4 " style="--color:red;--glow-color:black"></div>
+			<div class="gimbal-ring3 " style="--color:white;--glow-color:skyblue"></div>
+			<div class="gimbal-ring2 " style="--color:gold;--glow-color:orange"></div>
+			<div class="gimbal-ring1 " style="--color:black;--glow-color:white"></div>
+		</div>
+		<p class="animation">Gimbal Loader 2</p>
+	</div>
+	<div class="animationContainer" onmouseenter="addClassToChildren(this.children[0], 'animated');" onmouseleave="endAnimationRemoveClass(this.children[0], 'animated');" onClick="displayElementFullscreen(this.children[0])">
+		<div class="animation">
+			<div class="gimbal-ring9 noChange" style="--color:rgba(0,0,0,0);--glow-color:rgba(0,0,0,0);--inner-glow-color:aqua"></div>
+			<div class="gimbal-ring4 " style="--color:gold;--glow-color:orange;--inner-glow-color:darkorange"></div>
+			<div class="gimbal-ring3 " style="--color:gold;--glow-color:orange;--inner-glow-color:darkorange"></div>
+			<div class="gimbal-ring2 " style="--color:gold;--glow-color:orange;--inner-glow-color:darkorange"></div>
+		</div>
+		<p class="animation">Gimbal Loader 3</p>
+	</div>
+	<div class="animationContainer" onmouseenter="startSummonLoop(this.children[0]);" onmouseleave="endSummonLoop(this.children[0]);" onClick="displayElementFullscreen(this.children[0])">
+		<div class="animation-small">
+			<div class="arcane-ring arcane-outer-ring" style="--color:red;--glow-color:violet;--inner-glow-color:violet;--time:1s;--duration:1;"></div>
+			<div class="arcane-ring arcane-inner-ring" style="--color:red;--glow-color:violet;--inner-glow-color:violet;--time:2s;--duration:1;"></div>
+			<div class="arcane-ring arcane-center-ring" style="--color:red;--glow-color:violet;--inner-glow-color:violet;--time:3s;--duration:1;"></div>
+			<div class="arcane-container" style="--time:2.4s;--duration:1;--idle-time:4.8s;--idle-duration:3;">	
+				<div class="arcane-edge" style="--rotate:0deg;--color:orangered;--glow-color:red;">
+					<div class="arcane-edge-top arcane-arrow"></div>
+					<div class="arcane-edge-bottom arcane-arrow"></div>
+					<div class="arcane-edge-left arcane-arrow"></div>
+					<div class="arcane-edge-right arcane-arrow"></div>
+				</div>
+			</div>
+			<div class="arcane-container" style="--time:2.2s;--duration:1;--idle-time:5.2s;--idle-duration:3;">
+				<div class="arcane-edge" style="--rotate:45deg;--color:orangered;--glow-color:red;">
+					<div class="arcane-edge-top arcane-spear"></div>
+					<div class="arcane-edge-bottom arcane-spear"></div>
+					<div class="arcane-edge-left arcane-spear"></div>
+					<div class="arcane-edge-right arcane-spear"></div>
+				</div>
+			</div>
+			<div class="arcane-container" style="--time:1.75s;--duration:1;--idle-time:16s;--idle-direction:reverse;--idle-duration:1;">
+				<svg class="arcane-ring arcane-border-symbols" viewbox="-9.5,-9.5,219,219" style="--rotate:0deg;">
+					<path id="arcane-circlePath" fill="transparent" d="M 100,100 m -75,0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"/>
+					<text class="arcane-runes" style="--color:gold;--glow-color:orange;">
+						<textPath href="#arcane-circlePath">
+							I need some placeholder text for a second but just enough to fill the ring so maybe this much will do
+						</textPath>
+					</text>
+				</svg>
+			</div>
+			<div class="arcane-container" style="--time:2.75s;--duration:1;--idle-time:4s;--idle-direction:reverse;--idle-duration:3;">
+				<svg class="arcane-inner-shape" viewBox="0,0,100,100" style="--rotate:0deg;">
+					<filter id="arcane-shapeGlow" x="-.5" y="-.5" width=200% height=200%>
+						<feGaussianBlur in="SourceGraphic" stdDeviation=".85"/>
+					</filter>
+					<polygon class="arcane-shape-triangle" points="27.5,63 72.5,63 50,24" style="--color:red;"/>
+					<polygon class="arcane-shape-triangle glow" points="27.5,63 72.5,63 50,24" filter="url(#arcane-shapeGlow)" style="--glow-color:violet;"/>
+				</svg>
+			</div>
+			<div class="arcane-container" style="--time:2.75s;--duration:1;--idle-time:3.75s;--idle-direction:reverse;--idle-duration:3;">
+				<svg class="arcane-inner-shape" viewBox="0,0,100,100" style="--rotate:180deg;">
+					<polygon class="arcane-shape-triangle" points="27.5,63 72.5,63 50,24" style="--color:red;"/>
+					<polygon class="arcane-shape-triangle glow" points="27.5,63 72.5,63 50,24" filter="url(#arcane-shapeGlow)" style="--glow-color:violet;"/>
+				</svg>
+			</div>
+			<!--<svg class="arcane-inner-shape" viewBox="0,0,100,100" style="--rotate:45deg;">
+				<polygon class="arcane-shape-square" points="33,33 67,33 67,67 33,67" style="--color:red;"/>
+				<polygon class="arcane-shape-square" points="33,33 67,33 67,67 33,67" filter="url(#arcane-shapeGlow)" style="--color:violet;"/>
+			</svg>-->
+			<div class="arcane-container" style="--time:2.7s;--duration:1;--idle-time:4.5s;--idle-duration:3;">
+				<div class="arcane-edge" style="--rotate:30deg;--color:orangered;--glow-color:red;">
+					<div class="arcane-edge-inner-top arcane-chevron"></div>
+					<div class="arcane-edge-inner-bottomleft arcane-chevron"></div>
+					<div class="arcane-edge-inner-bottomright arcane-chevron"></div>
+				</div>
+			</div>
+			<div class="arcane-container" style="--time:2.5s;--duration:1;--idle-time:4.25s;--idle-duration:3;">
+				<div class="arcane-edge" style="--rotate:-30deg;--color:orangered;--glow-color:red;">
+					<div class="arcane-edge-inner-top arcane-chevron"></div>
+					<div class="arcane-edge-inner-bottomleft arcane-chevron"></div>
+					<div class="arcane-edge-inner-bottomright arcane-chevron"></div>
+				</div>
+			</div>
+			<div class="arcane-container" style="--time:3s;--duration:1;--idle-time:3.5s;--idle-duration:3;">
+				<div class="arcane-edge" style="--rotate:0deg;--color:orangered;--glow-color:red;">
+					<div class="arcane-edge-center-top arcane-diamond"></div>
+					<div class="arcane-edge-center-bottomleft arcane-diamond"></div>
+					<div class="arcane-edge-center-bottomright arcane-diamond"></div>
+				</div>
+			</div>
+			<div class="arcane-container" style="--time:3s;--duration:1;--idle-time:3s;--idle-duration:3;">
+				<div class="arcane-edge" style="--rotate:60deg;--color:orangered;--glow-color:red;">
+					<div class="arcane-edge-center-top arcane-diamond"></div>
+					<div class="arcane-edge-center-bottomleft arcane-diamond"></div>
+					<div class="arcane-edge-center-bottomright arcane-diamond"></div>
+				</div>
+			</div>
+			<svg class="arcane-center" viewBox="0,0,100,100" style="--time:3s;--duration:1;">
+				<g transform="translate(50,50)">
+					<circle style="fill:transparent" r="50"/>
+					<text class="arcane-center-rune" text-anchor="middle" style="--color:gold;--glow-color:orange;--font:'mage-script';">G</text>
+				</g>
+			</svg>
+		</div>
+		<p class="animation">Arcane Loader</p>
+	</div>
+	<div class="animationContainer" onmouseenter="startSummonLoop(this.children[0]);" onmouseleave="endSummonLoop(this.children[0]);" onClick="displayElementFullscreen(this.children[0])">
+		<div class="animation-small">
+			<!--<div class="arcane-ring arcane-outer-ring" style="--color:#5E2896;--glow-color:rgba(132,23,205,.5);--inner-glow-color:#8417CD;--time:1s;"></div>-->
+			<div class="arcane-ring arcane-inner-ring" style="--color:#5E2896;--glow-color:rgba(132,23,205,.5);--inner-glow-color:#8417CD;--time:1.5s;"></div>
+			<div class="arcane-ring arcane-center-ring" style="--color:#5E2896;--glow-color:rgba(132,23,205,.5);--inner-glow-color:#8417CD;--time:2s;"></div>
+			<!--Outer arcane edges-->
+			<!--<div class="arcane-container" style="--time:2s;--idle-time:4.2s;--idle-duration:4;">
+				<div class="arcane-edge" style="--color:#862896;--glow-color:#A517CD;">
+					<div class="arcane-edge-top arcane-spear" style="transform:translate(0,150%)"></div>
+					<div class="arcane-edge-left arcane-spear" style="transform:translate(150%,0)rotate(270deg)"></div>
+					<div class="arcane-edge-right arcane-spear" style="transform:translate(-150%,0)rotate(90deg)"></div>
+					<div class="arcane-edge-bottom arcane-spear" style="transform:translate(0,-150%)rotate(180deg)"></div>
+				</div>
+			</div>
+			<div class="arcane-container" style="--time:2s;--idle-time:4.2s;--idle-duration:4;">
+				<div class="arcane-edge" style="--rotate:45deg;--color:#862896;--glow-color:#A517CD;">
+					<div class="arcane-edge-top arcane-spear" style="transform:translate(0,150%)"></div>
+					<div class="arcane-edge-left arcane-spear" style="transform:translate(150%,0)rotate(270deg)"></div>
+					<div class="arcane-edge-right arcane-spear" style="transform:translate(-150%,0)rotate(90deg)"></div>
+					<div class="arcane-edge-bottom arcane-spear" style="transform:translate(0,-150%)rotate(180deg)"></div>
+				</div>
+			</div>-->
+			<!--Inner shapes-->
+			<div class="arcane-container" style="--time:1.75s;--idle-direction:reverse;--idle-time:4.2s;--idle-duration:4;">
+				<!--Add an inner edge to bind with the shape-->
+				<div class="arcane-edge" style="--rotate:180deg;--color:#967D28;--glow-color:#CD8717;">
+					<div class="arcane-edge-inner-top arcane-diamond"></div>
+					<div class="arcane-edge-inner-bottomleft arcane-diamond"></div>
+					<div class="arcane-edge-inner-bottomright arcane-diamond"></div>
+				</div>
+				<!--Now add the shape-->
+				<svg class="arcane-inner-shape" viewBox="0,0,100,100" style="--rotate:180deg;--color:#5E2896;--glow-color:#8417CD;">
+					<filter id="arcane-shapeGlow" x="-.5" y="-.5" width=200% height=200%>
+						<feGaussianBlur in="SourceGraphic" stdDeviation=".85"/>
+					</filter>
+					<polygon class="arcane-shape-triangle" points="27.5,63 72.5,63 50,24"/>
+					<polygon class="arcane-shape-triangle glow" filter="url(#arcane-shapeGlow)" points="27.5,63 72.5,63 50,24"/>
+				</svg>
+			</div>
+			<!--Inner arcane edges-->
+			<div class="arcane-container" style="--time:2.25s;--idle-time:4s;--idle-duration:4;">
+				<div class="arcane-edge" style="--color:#862896;--glow-color:#A517CD;">
+					<div class="arcane-edge-inner-top arcane-diamond"></div>
+					<div class="arcane-edge-inner-bottomleft arcane-diamond"></div>
+					<div class="arcane-edge-inner-bottomright arcane-diamond"></div>
+				</div>
+			</div>
+			<!--Center arcane edges-->
+			<div class="arcane-container" style="--time:2.5s;--idle-time:3.8s;--idle-duration:4;">
+				<div class="arcane-edge" style="--rotate:180deg;--color:#862896;--glow-color:#A517CD;">
+					<div class="arcane-edge-center-top arcane-chevron"></div>
+					<div class="arcane-edge-center-bottomleft arcane-chevron"></div>
+					<div class="arcane-edge-center-bottomright arcane-chevron"></div>
+				</div>
+			</div>
+			<!--Center rune-->
+			<!--<svg class="arcane-center" viewBox="0,0,100,100">
+				<g transform="translate(50,50)">
+					<circle style="fill:transparent" r="50"/>
+					<text class="arcane-center-rune" text-anchor="middle" style="--font:mage-script;--color:black;--glow-color:transparent;">H</text>
+				</g>
+			</svg>-->
+		</div>
+		<p class="animation">Arcane Loader 2</p>
+	</div>
+	<div class="animationContainer" onmouseenter="startSummonLoop(this.children[0]);" onmouseleave="endSummonLoop(this.children[0]);" onClick="displayElementFullscreen(this.children[0])">
+		<div class="animation-small">
+			<!--Rings Section-->
+			<div class="arcane-ring arcane-outer-ring" style="--color:#5E2896;--glow-color:rgba(132,23,205,.5);--inner-glow-color:#8417CD;--time:1s;"></div>
+			<div class="arcane-ring arcane-inner-ring" style="--color:#5E2896;--glow-color:rgba(132,23,205,.5);--inner-glow-color:#8417CD;--time:2s;"></div>
+			<div class="arcane-ring arcane-center-ring" style="--color:#5E2896;--glow-color:rgba(132,23,205,.5);--inner-glow-color:#8417CD;--time:3s;"></div>
+			<!--Shapes Section-->
+			<div class="arcane-container" style="--color:#5E2896;--glow-color:#8417CD;--time:2.75s;--idle-duration:2;--idle-direction:reverse;--idle-time:4.5s;">
+				<svg class="arcane-inner-shape" viewBox="0,0,100,100">
+					<filter id="arcane-shapeGlow" x="-.5" y="-.5" width=200% height=200%>
+						<feGaussianBlur in="SourceGraphic" stdDeviation=".85"/>
+					</filter>
+					<polygon class="arcane-shape-triangle" points="27.5,63 72.5,63 50,24"/>
+					<polygon class="arcane-shape-triangle glow" points="27.5,63 72.5,63 50,24" filter="url(#arcane-shapeGlow)"/>
+				</svg>
+				<svg class="arcane-inner-shape" viewBox="0,0,100,100" style="--rotate:60deg;">
+					<polygon class="arcane-shape-triangle" points="27.5,63 72.5,63 50,24"/>
+					<polygon class="arcane-shape-triangle glow" points="27.5,63 72.5,63 50,24" filter="url(#arcane-shapeGlow)"/>
+				</svg>
+			</div>
+			<!--Outer Edges Section-->
+			<div class="arcane-container" style="--color:#862896;--glow-color:#A517CD;--time:2.4s;--idle-duration:2;--idle-time:5.5s;">
+				<div class="arcane-edge">
+					<div class="arcane-edge-top arcane-spear"></div>
+					<div class="arcane-edge-bottomleft arcane-spear"></div>
+					<div class="arcane-edge-bottomright arcane-spear"></div>
+				</div>
+				<div class="arcane-edge" style="--rotate:60deg;">
+					<div class="arcane-edge-top arcane-spear"></div>
+					<div class="arcane-edge-bottomleft arcane-spear"></div>
+					<div class="arcane-edge-bottomright arcane-spear"></div>
+				</div>
+			</div>
+			<div class="arcane-container" style="--color:#862896;--glow-color:#A517CD;--time:2.2s;--idle-duration:2;--idle-time:5.25s;">
+				<div class="arcane-edge" style="--rotate:30deg;">
+					<div class="arcane-edge-top arcane-spear"></div>
+					<div class="arcane-edge-bottomleft arcane-spear"></div>
+					<div class="arcane-edge-bottomright arcane-spear"></div>
+				</div>
+				<div class="arcane-edge" style="--rotate:-30deg;">
+					<div class="arcane-edge-top arcane-spear"></div>
+					<div class="arcane-edge-bottomleft arcane-spear"></div>
+					<div class="arcane-edge-bottomright arcane-spear"></div>
+				</div>
+			</div>
+			<!--Inner Edges Section-->
+			<div class="arcane-container" style="--color:#862896;--glow-color:#A517CD;--time:2.57s;--idle-duration:2;--idle-time:4.75s;">
+				<div class="arcane-edge" style="--rotate:30deg;">
+					<div class="arcane-edge-inner-top arcane-chevron"></div>
+					<div class="arcane-edge-inner-bottomleft arcane-chevron"></div>
+					<div class="arcane-edge-inner-bottomright arcane-chevron"></div>
+				</div>
+				<div class="arcane-edge" style="--rotate:-30deg;">
+					<div class="arcane-edge-inner-top arcane-chevron"></div>
+					<div class="arcane-edge-inner-bottomleft arcane-chevron"></div>
+					<div class="arcane-edge-inner-bottomright arcane-chevron"></div>
+				</div>
+			</div>
+			<!--Center Edges Section-->
+			<div class="arcane-container" style="--color:#862896;--glow-color:#A517CD;--time:3s;--idle-duration:3;--idle-time:2.75s;">
+				<div class="arcane-edge">
+					<div class="arcane-edge-center-top arcane-diamond"></div>
+					<div class="arcane-edge-center-bottomleft arcane-diamond"></div>
+					<div class="arcane-edge-center-bottomright arcane-diamond"></div>
+				</div>
+				<div class="arcane-edge" style="--rotate:60deg;">
+					<div class="arcane-edge-center-top arcane-diamond"></div>
+					<div class="arcane-edge-center-bottomleft arcane-diamond"></div>
+					<div class="arcane-edge-center-bottomright arcane-diamond"></div>
+				</div>
+			</div>
+			<!--Border Section-->
+			<div class="arcane-container" style="--color:#967D28;--glow-color:#CD8717;--time:1.75s;--idle-duration:1;--idle-direction:reverse;--idle-time:12s;">
+				<svg class="arcane-ring arcane-border-symbols" viewbox="-9.5,-9.5,219,219">
+					<path id="arcane-circlePath" fill="transparent" d="M 100,100 m -75,0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"/>
+					<text class="arcane-runes">
+						<textPath href="#arcane-circlePath">
+							CyberTomeOS CyberTomeOS CyberTomeOS CyberTomeOS CyberTomeOS CyberTomeOS CyberTomeOS
+						</textPath>
+					</text>
+				</svg>					
+			</div>
+			<!--Center Section-->
+			<svg class="arcane-center" viewBox="0,0,100,100" style="--color:#967D28;--glow-color:#CD8717;--time:3s;">
+				<g transform="translate(50,50)">
+					<circle style="fill:transparent" r="50"/>
+					<text class="arcane-center-rune" text-anchor="middle" style="--font:'mage-script'; ">H</text>
+				</g>
+			</svg>				
+		</div>
+		<p class="animation">Arcane Loader 3</p>
+	</div>
+	<!--<div class="animationContainer" onClick="displayElementFullscreen(this.children[0])">
+		<div class="animation">
+			<div class="core-image noChange" style="--image-src:url('../../images/animations/sunset-sun.svg')"></div>
+		</div>
+		<p class="animation">Image Loader</p>
+	</div>-->
+	<!--Footer Starts-->
+	<br/><br/>
+	<hr/>
+	<div id="socialMediaContainer">
+		<a class="socialMediaLink" href="https://www.facebook.com/alex.knipper.37"><div class="socialMediaButton"><img id="facebookImage" class="logoImage" src="../../../images/utility/social/facebook.png" alt="facebook"/></div></a>
+		<a class="socialMediaLink" href="https://www.instagram.com/alex.knipper/"><div class="socialMediaButton"><img id="instagramImage" class="logoImage" src="../../../images/utility/social/instagram.png" alt="instagram"/></div></a>
+		<a class="socialMediaLink" href="https://twitter.com/AlexKnipper"><div class="socialMediaButton"><img id="twitterImage" class="logoImage" src="../../../images/utility/social/twitter.png" alt="twitter"/></div></a>
+		<a class="socialMediaLink" href="https://www.linkedin.com/in/alex-knipper/"><div class="socialMediaButton"><img id="linkedinImage" class="logoImage" src="../../../images/utility/social/linkedin.png" alt="linkedin"/></div></a>
+		<a class="socialMediaLink" href="https://www.youtube.com/channel/UCulNQAsZYn025HDWIvZ1Y2A"><div class="socialMediaButton"><img id="youtubeImage" class="logoImage" src="../../../images/utility/social/youtube.png" alt="youtube"/></div></a>
+		<a class="socialMediaLink" href="https://github.com/alexknipper"><div class="socialMediaButton"><img id="githubImage" class="logoImage" src="../../../images/utility/social/github.png" alt="github"/></div></a>
+		<a class="socialMediaLink" href="https://alexknipper.bandcamp.com/music"><div class="socialMediaButton"><img id="bandcampImage" class="logoImage" src="../../../images/utility/social/bandcamp.png" alt="bandcamp"/></div></a>
+	</div>
+	<!--Footer Ends-->
+ </body>
+ </html>

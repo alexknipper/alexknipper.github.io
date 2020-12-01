@@ -1,0 +1,506 @@
+/*General styles go here*/
+.arcane-ring
+{
+	display:inline-block;
+	position:absolute;
+	border:.35vw solid var(--color, black);
+	box-shadow:0px 0px 2.5vw var(--glow-color, white), 0px 0px 1.25vw var(--inner-glow-color, white) inset;
+	border-radius:50%;
+	margin-top:-.35vw;
+	margin-left:-.35vw;
+}
+.arcane-ring.animated:not(.arcane-border-symbols)
+{
+	animation: zoom var(--time, 2s) var(--function, cubic-bezier(0.445, 0.05, 0.55, 0.95)) var(--delay, 0s) var(--duration, 1) var(--direction, normal) var(--fill-mode, both);
+}
+
+.arcane-outer-ring
+{
+	width:72%;
+	height:72%;
+	top:14%;
+	left:14%;
+}
+
+.arcane-inner-ring
+{
+	width:57.5%;
+	height:57.5%;
+	top:21.25%;
+	left:21.25%;
+}
+
+.arcane-center-ring
+{
+	width:25%;
+	height:25%;
+	top:37.5%;
+	left:37.5%;
+}
+
+.arcane-edge
+{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	transform:rotate(var(--rotate, 0deg));
+	filter: drop-shadow(0px 0px .25rem var(--glow-color, white));
+}
+
+.arcane-border-symbols
+{
+	width:100%;
+	height:100%;
+	top:0%;
+	left:0%;
+	border-color:transparent;
+	box-shadow:0px 0px 5vw transparent;
+	transform:rotate(var(--rotate, 0deg));
+}
+
+.arcane-runes
+{
+	width:150;
+	height:150;
+	fill:var(--color, black);
+	font-size:75%;
+	font-family:var(--font, "barazhad");
+	text-shadow:0px 0px .25vw var(--glow-color, white);
+}
+
+.arcane-inner-shape
+{
+	display:inline-block;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	transform:rotate(var(--rotate, 0deg));
+}
+
+[class^="arcane-shape-"]
+{
+	fill:transparent;
+	stroke:var(--color, black);
+	stroke-width:.35;
+}
+[class^="arcane-shape-"].glow
+{
+	stroke:var(--glow-color, white);
+}
+
+.arcane-center
+{
+	display:inline-block;
+	position:absolute;
+	width:25%;
+	height:25%;
+	top:37.5%;
+	left:37.5%;
+}
+.arcane-center.animated
+{
+	animation: zoom var(--time, 2s) var(--function, cubic-bezier(0.445, 0.05, 0.55, 0.95)) var(--delay, 0s) var(--duration, 1) var(--direction, normal)  var(--fill-mode, both);
+}
+
+.arcane-center-rune
+{
+	width:150;
+	height:150;
+	fill:var(--color, black);
+	font-size:250%;
+	font-family:var(--font, "barazhad");
+	text-shadow:0px 0px .25vw var(--glow-color, white);
+	dominant-baseline:central;
+}
+
+.arcane-container
+{
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+}
+.arcane-container.animated
+{
+	animation: spin-scale var(--time, 2s) var(--function, cubic-bezier(0.445, 0.05, 0.55, 0.95)) var(--delay, 0s) var(--duration, 1) var(--direction, normal)  var(--fill-mode, both);
+}
+.arcane-container.animated-idle
+{
+	animation: idle-spin var(--idle-time, 2s) linear var(--idle-delay, 0s) var(--idle-duration, 1) var(--idle-direction, normal);
+}
+
+[class^="arcane-edge-"]
+{
+	width:5%;
+	height:5%;
+	position:absolute;
+	background-color:var(--color, black);
+}
+.arcane-edge-top
+{
+	top:7%;
+	left:47.5%;
+}
+.arcane-edge-bottom
+{
+	bottom:7%;
+	left:47.5%;
+	transform:rotate(180deg);
+}
+.arcane-edge-left
+{
+	top:47.5%;
+	left:7%;
+	transform:rotate(270deg);
+}
+.arcane-edge-right
+{
+	top:47.5%;
+	right:7%;
+	transform:rotate(90deg);
+}
+.arcane-edge-bottomleft
+{
+	bottom:27.2%;
+	left:12.4%;
+	transform:rotate(240deg);
+}
+.arcane-edge-bottomright
+{
+	bottom:27.2%;
+	right:12.4%;
+	transform:rotate(120deg);
+}
+.arcane-edge-inner-top
+{
+	top:24%;
+	left:47.5%;
+}
+.arcane-edge-inner-bottom
+{
+	bottom:24%;
+	left:47.5%;
+	transform:rotate(180deg);
+}
+.arcane-edge-inner-left
+{
+	top:47.5%;
+	left:24%;
+	transform:rotate(270deg);
+}
+.arcane-edge-inner-right
+{
+	top:47.5%;
+	right:24%;
+	transform:rotate(90deg);
+}
+.arcane-edge-inner-bottomleft
+{
+	bottom:35.7%;
+	left:27.1%;
+	transform:rotate(240deg);
+}
+.arcane-edge-inner-bottomright
+{
+	bottom:35.7%;
+	right:27.1%;
+	transform:rotate(120deg);
+}
+.arcane-edge-center-top
+{
+	top:38%;
+	left:47.5%;
+}
+.arcane-edge-center-bottom
+{
+	bottom:38%;
+	left:47.5%;
+	transform:rotate(180deg);
+}
+.arcane-edge-center-left
+{
+	top:47.5%;
+	left:38%;
+	transform:rotate(270deg);
+}
+.arcane-edge-center-right
+{
+	top:47.5%;
+	right:38%;
+	transform:rotate(90deg);
+}
+.arcane-edge-center-bottomleft
+{
+	bottom:42.75%;
+	left:39.25%;
+	transform:rotate(240deg);
+}
+.arcane-edge-center-bottomright
+{
+	bottom:42.75%;
+	right:39.25%;
+	transform:rotate(120deg);
+}
+
+.arcane-circle
+{clip-path:circle(40% at 50% 60%);
+-webkit-clip-path:circle(40% at 50% 60%);}
+.arcane-triangle
+{clip-path:polygon(50% 10%, 20% 100%, 80% 100%);
+-webkit-clip-path:polygon(50% 10%, 20% 100%, 80% 100%);}
+.arcane-diamond
+{clip-path:polygon(50% 0%, 75% 50%, 50% 100%, 25% 50%);
+-webkit-clip-path:polygon(50% 0%, 75% 50%, 50% 100%, 25% 50%);}
+.arcane-hexagon
+{clip-path:polygon(50% 30%, 80% 50%, 80% 80%, 50% 100%, 20% 80%, 20% 50%);
+-webkit-clip-path:polygon(50% 30%, 80% 50%, 80% 80%, 50% 100%, 20% 80%, 20% 50%);}
+.arcane-arrow
+{clip-path:polygon(80% 85%, 60% 75%, 60% 100%, 40% 100%, 40% 75%, 20% 85%, 50% 0);
+-webkit-clip-path:polygon(80% 85%, 60% 75%, 60% 100%, 40% 100%, 40% 75%, 20% 85%, 50% 0);}
+.arcane-spear
+{clip-path:polygon(75% 65%, 60% 80%, 60% 100%, 50% 90%, 40% 100%, 40% 80%, 25% 65%, 50% 0);
+-webkit-clip-path:polygon(75% 65%, 60% 80%, 60% 100%, 50% 90%, 40% 100%, 40% 80%, 25% 65%, 50% 0);}
+.arcane-chevron
+{clip-path:polygon(50% 0, 85% 100%, 50% 80%, 15% 100%);
+-webkit-clip-path:polygon(50% 0, 85% 100%, 50% 80%, 15% 100%);}
+.arcane-oval
+{clip-path:ellipse(25% 40% at 50% 60%);
+-webkit-clip-path:ellipse(25% 40% at 50% 60%);}
+
+/*Smaller mobile device styles go here*/
+
+@media only screen and (min-width: 638px)
+{
+	/*Larger mobile device styles go here*/
+	.arcane-ring
+	{
+		border-width:.25vw;
+		margin-top:-.25vw;
+		margin-left:-.25vw;
+		box-shadow:0px 0px 2.25vw var(--glow-color, white), 0px 0px 1.125vw var(--inner-glow-color, white) inset;
+	}
+	
+	.arcane-border-symbols
+	{
+		box-shadow:0px 0px 5vw transparent;
+	}
+}
+
+@media only screen and (min-width: 875px)
+{
+	/*Portrait-mode tablet styles go here*/
+	.arcane-ring
+	{
+		border-width:.225vw;
+		margin-top:-.225vw;
+		margin-left:-.225vw;
+		box-shadow:0px 0px 2vw var(--glow-color, white), 0px 0px 1vw var(--inner-glow-color, white) inset;
+	}
+	
+	.arcane-border-symbols
+	{
+		box-shadow:0px 0px 5vw transparent;
+	}
+}
+
+@media only screen and (min-width: 1050px)
+{
+	/*Landscape-mode tablet styles go here*/
+	.arcane-ring
+	{
+		border-width:.2vw;
+		margin-top:-.2vw;
+		margin-left:-.2vw;
+		box-shadow:0px 0px 1.75vw var(--glow-color, white), 0px 0px .875vw var(--inner-glow-color, white) inset;
+	}
+	
+	.arcane-border-symbols
+	{
+		box-shadow:0px 0px 5vw transparent;
+	}
+}
+
+@media only screen and (min-width: 1260px)
+{
+	/*720p desktop styles go here (1280x720)*/
+	.arcane-ring
+	{
+		border-width:.175vw;
+		margin-top:-.175vw;
+		margin-left:-.175vw;
+		box-shadow:0px 0px 1.5vw var(--glow-color, white), 0px 0px .75vw var(--inner-glow-color, white) inset;
+	}
+	
+	.arcane-edge
+	{
+		filter: drop-shadow(0px 0px .35rem var(--glow-color, white));
+	}
+	
+	.arcane-border-symbols
+	{
+		box-shadow:0px 0px 5vw transparent;
+	}
+}
+
+@media only screen and (min-width: 1900px)
+{
+	/*1080p desktop styles go here (1920x1080)*/
+	.arcane-ring
+	{
+		border-width:.15vw;
+		margin-top:-.15vw;
+		margin-left:-.15vw;
+		box-shadow:0px 0px 1.4vw var(--glow-color, white), 0px 0px .7vw var(--inner-glow-color, white) inset;
+	}
+	
+	.arcane-border-symbols
+	{
+		box-shadow:0px 0px 5vw transparent;
+	}
+}
+
+@media only screen and (min-width: 2028px)
+{
+	/*2K desktop styles go here (2048x1080)*/
+	.arcane-edge
+	{
+		filter: drop-shadow(0px 0px .45rem var(--glow-color, white));
+	}
+}
+
+@media only screen and (min-width: 2540px)
+{
+	/*1440p desktop styles go here (2560x1440)*/
+}
+
+@media only screen and (min-width: 3120px)
+{
+	/*Intermediary breakpoint between 1440p and 4K*/
+	.arcane-edge
+	{
+		filter: drop-shadow(0px 0px .55rem var(--glow-color, white));
+	}
+}
+
+@media only screen and (min-width: 3820px)
+{
+	/*4K desktop styles go here (3840x2560)*/
+}
+
+@media only screen and (min-width: 4560px)
+{
+	/*Intermediary breakpoint 1 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 5240px)
+{
+	/*Intermediary breakpoint 2 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 5920px)
+{
+	/*Intermediary breakpoint 3 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 6880px)
+{
+	/*Intermediary breakpoint 4 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 7200px)
+{
+	/*Intermediary breakpoint 5 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 7660px)
+{
+	/*8K and above desktop styles go here (7680x3840)*/
+}
+
+/*Font-face styles go here*/
+@font-face {
+	font-family: 'barazhad';
+	src: url('../../fonts/arcane-loaders/barazhad/barazhad.eot'); /* IE9 Compat Modes */
+	src: url('../../fonts/arcane-loaders/barazhad/barazhad.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	  url('../../fonts/arcane-loaders/barazhad/barazhad.woff2') format('woff2'), /* Modern Browsers */
+	  url('../../fonts/arcane-loaders/barazhad/barazhad.woff') format('woff'), /* Modern Browsers */
+	  url('../../fonts/arcane-loaders/barazhad/barazhad.ttf') format('truetype'), /* Safari, Android, iOS */
+	  url('../../fonts/arcane-loaders/barazhad/barazhad.svg') format('svg'); /* Legacy iOS */  font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'greifswalder-tengwar';
+	src: url('../../fonts/arcane-loaders/greifswalder-tengwar/greifswalder-tengwar.eot'); /* IE9 Compat Modes */
+	src: url('../../fonts/arcane-loaders/greifswalder-tengwar/greifswalder-tengwar.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	  url('../../fonts/arcane-loaders/greifswalder-tengwar/greifswalder-tengwar.woff2') format('woff2'), /* Modern Browsers */
+	  url('../../fonts/arcane-loaders/greifswalder-tengwar/greifswalder-tengwar.woff') format('woff'), /* Modern Browsers */
+	  url('../../fonts/arcane-loaders/greifswalder-tengwar/greifswalder-tengwar.ttf') format('truetype'), /* Safari, Android, iOS */
+	  url('../../fonts/arcane-loaders/greifswalder-tengwar/greifswalder-tengwar.svg') format('svg'); /* Legacy iOS */  font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'lokharic';
+	src: url('../../fonts/arcane-loaders/lokharic/lokharic.eot'); /* IE9 Compat Modes */
+	src: url('../../fonts/arcane-loaders/lokharic/lokharic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	  url('../../fonts/arcane-loaders/lokharic/lokharic.woff2') format('woff2'), /* Modern Browsers */
+	  url('../../fonts/arcane-loaders/lokharic/lokharic.woff') format('woff'), /* Modern Browsers */
+	  url('../../fonts/arcane-loaders/lokharic/lokharic.ttf') format('truetype'), /* Safari, Android, iOS */
+	  url('../../fonts/arcane-loaders/lokharic/lokharic.svg') format('svg'); /* Legacy iOS */  font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'mage-script';
+	src: url('../../fonts/arcane-loaders/mage-script/mage-script.eot'); /* IE9 Compat Modes */
+	src: url('../../fonts/arcane-loaders/mage-script/mage-script.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	  url('../../fonts/arcane-loaders/mage-script/mage-script.woff2') format('woff2'), /* Modern Browsers */
+	  url('../../fonts/arcane-loaders/mage-script/mage-script.woff') format('woff'), /* Modern Browsers */
+	  url('../../fonts/arcane-loaders/mage-script/mage-script.ttf') format('truetype'), /* Safari, Android, iOS */
+	  url('../../fonts/arcane-loaders/mage-script/mage-script.svg') format('svg'); /* Legacy iOS */  font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'midjungards';
+	src: url('../../fonts/arcane-loaders/midjungards/midjungards.eot'); /* IE9 Compat Modes */
+	src: url('../../fonts/arcane-loaders/midjungards/midjungards.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	  url('../../fonts/arcane-loaders/midjungards/midjungards.woff2') format('woff2'), /* Modern Browsers */
+	  url('../../fonts/arcane-loaders/midjungards/midjungards.woff') format('woff'), /* Modern Browsers */
+	  url('../../fonts/arcane-loaders/midjungards/midjungards.ttf') format('truetype'), /* Safari, Android, iOS */
+	  url('../../fonts/arcane-loaders/midjungards/midjungards.svg') format('svg'); /* Legacy iOS */  font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'stargate-glyphs';
+	src: url('../../fonts/arcane-loaders/stargate-glyphs/stargate-glyphs.eot'); /* IE9 Compat Modes */
+	src: url('../../fonts/arcane-loaders/stargate-glyphs/stargate-glyphs.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	  url('../../fonts/arcane-loaders/stargate-glyphs/stargate-glyphs.woff2') format('woff2'), /* Modern Browsers */
+	  url('../../fonts/arcane-loaders/stargate-glyphs/stargate-glyphs.woff') format('woff'), /* Modern Browsers */
+	  url('../../fonts/arcane-loaders/stargate-glyphs/stargate-glyphs.ttf') format('truetype'), /* Safari, Android, iOS */
+	  url('../../fonts/arcane-loaders/stargate-glyphs/stargate-glyphs.svg') format('svg'); /* Legacy iOS */  font-weight: normal;
+	font-style: normal;
+}
+
+/*Animation styles go here*/
+@keyframes zoom {
+	0% {opacity:0;transform:scale(0);}
+	100% {opacity:1;transform:scale(1);}
+}
+@keyframes spin-scale {
+	0% {opacity:0;transform:rotate(-360deg) scale(0);}
+	50% {opacity:.25;transform:rotate(-180deg) scale(.75);}
+	100% {opacity:1;transform:rotate(--rotate+360deg) scale(1);}
+}
+@keyframes idle-spin {
+	0% {transform:rotate(0deg);}
+	100% {transform:rotate(360deg);}
+}
+
+.notSummoned
+{
+	opacity:0;
+	scale:0;
+}

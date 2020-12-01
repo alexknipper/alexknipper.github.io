@@ -1,0 +1,275 @@
+/*General styles go here*/
+#KS5_navbar
+{
+	position:fixed;
+	background-color:#333333;
+	height:8vw;
+	display:table-row;
+	z-index:10;
+	opacity:.8;
+	font-family:Arial,Calibri,sans-serif;
+	color:white;
+	text-shadow:.07vw .07vw .1vw #000000,0px 0px .1vw #000000;
+	-webkit-user-select: none; /* Safari 3.1+ */
+	-moz-user-select: none; /* Firefox 2+ */
+	-ms-user-select: none; /* IE 10+ */
+	user-select: none; /* Standard syntax */
+}
+
+#KS5_navbar:not(.rounded-left):not(.rounded-right)
+{
+	top:0;
+	left:0;
+	width:100%;
+	max-width:100%;
+	padding:1vw;
+}
+
+.rounded-left, .rounded-right
+{
+	top:1vw;
+	width:90%;
+	padding:.5vw;
+}
+
+.rounded-left:not(.rounded-right)
+{
+	right:0;
+	border-top-left-radius:5vw;
+	border-bottom-left-radius:5vw;
+}
+
+.rounded-right:not(.rounded-left)
+{
+	left:0;
+	border-top-right-radius:5vw;
+	border-bottom-right-radius:5vw;
+}
+
+.shadowed
+{
+	box-shadow:.3vw .3vw .6vw #000000;
+}
+
+.KS5_navbarNoCollision
+{
+	width:100%;
+	height:10vw;
+}
+
+.KS5_navbarLogo:not(img)
+{
+	display:table-cell;
+	height:100%;
+	float:left;
+}
+
+.KS5_navbarLogo img
+{
+	display:table-cell;
+	height:100%;
+}
+
+.KS5_navbarLinks
+{
+	display:table-cell;
+	vertical-align:middle;
+	height:100%;
+	margin-right:2%;
+	float:right;
+}
+
+.KS5_navbarOption
+{
+	display:table-cell;
+	text-align:center;
+	vertical-align:middle;
+	text-shadow:.07vw .07vw .1vw #000000, 0px 0px .1vw #000000;
+	height:100%;
+	padding-left:1vw;
+	padding-right:1vw;
+	padding-top:2.75vw;
+	transition:text-shadow .15s;
+}
+
+.KS5_navbarOption:hover:not(.KS5_navbarActiveOption), .KS5_navbarOption:focus:not(.KS5_navbarActiveOption)
+{
+	opacity:1;
+	text-shadow:.07vw .07vw .1vw #00FFFF, 0px 0px .1vw #00FFFF;
+	cursor:pointer;
+}
+
+.KS5_navbarOptionText
+{
+	margin: 0% 5% 0% 5%;
+	padding:none;
+	text-align:center;
+}
+
+.KS5_navbarActiveOption
+{
+	text-shadow:.07vw .07vw .1vw #FF0000, 0px 0px .1vw #FF0000;
+}
+
+/*Smaller mobile device styles go here*/
+.KS5_navbarOptionText
+{
+	font-size:2.5vw;
+}
+
+@media only screen and (min-width: 638px)
+{
+	/*Larger mobile device styles go here*/
+	#KS5_navbar, .KS5_navbarNoCollision, .KS5_navbarLogo
+	{
+		height: 6vw;
+	}
+	
+	.KS5_navbarOption
+	{
+		padding-top:2vw;
+	}
+	
+	.KS5_navbarOptionText
+	{
+		font-size:2vw;
+	}
+	
+	.rounded-left, .rounded-right
+	{
+		padding:.4vw;
+	}
+}
+
+@media only screen and (min-width: 875px)
+{
+	/*Portrait-mode tablet styles go here*/
+	#KS5_navbar, .KS5_navbarNoCollision, .KS5_navbarLogo
+	{
+		height: 4vw;
+	}
+	
+	.KS5_navbarOption
+	{
+		padding-top:.75vw;
+	}
+	
+	.rounded-left, .rounded-right
+	{
+		padding:.3vw;
+	}
+}
+
+@media only screen and (min-width: 1050px)
+{
+	/*Landscape-mode tablet styles go here*/
+	#KS5_navbar, .KS5_navbarNoCollision, .KS5_navbarLogo
+	{
+		height: 3vw;
+	}
+	
+	.KS5_navbarOption
+	{
+		padding-top:.5vw;
+	}
+	
+	.KS5_navbarOptionText
+	{
+		font-size:1.75vw;
+	}
+	
+	.rounded-left, .rounded-right
+	{
+		padding:.2vw;
+	}
+}
+
+@media only screen and (min-width: 1260px)
+{
+	/*720p desktop styles go here (1280x720)*/
+	#KS5_navbar, .KS5_navbarNoCollision, .KS5_navbarLogo
+	{
+		height: 2.75vw;
+	}
+	
+	.KS5_navbarOptionText
+	{
+		font-size:1.5vw;
+	}
+}
+
+@media only screen and (min-width: 1900px)
+{
+	/*1080p desktop styles go here (1920x1080)*/
+	#KS5_navbar, .KS5_navbarNoCollision, .KS5_navbarLogo
+	{
+		height: 2.5vw;
+	}
+	
+	.KS5_navbarOption
+	{
+		padding-top:.5vw;
+	}
+	
+	.KS5_navbarOptionText
+	{
+		font-size:1.25vw;
+	}
+	
+	.rounded-left, .rounded-right
+	{
+		padding:.15vw;
+	}
+}
+
+@media only screen and (min-width: 2028px)
+{
+	/*2K desktop styles go here (2048x1080)*/
+}
+
+@media only screen and (min-width: 2540px)
+{
+	/*1440p desktop styles go here (2560x1440)*/
+}
+
+@media only screen and (min-width: 3120px)
+{
+	/*Intermediary breakpoint between 1440p and 4K*/
+}
+
+@media only screen and (min-width: 3820px)
+{
+	/*4K desktop styles go here (3840x2560)*/
+}
+
+@media only screen and (min-width: 4560px)
+{
+	/*Intermediary breakpoint 1 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 5240px)
+{
+	/*Intermediary breakpoint 2 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 5920px)
+{
+	/*Intermediary breakpoint 3 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 6880px)
+{
+	/*Intermediary breakpoint 4 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 7200px)
+{
+	/*Intermediary breakpoint 5 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 7660px)
+{
+	/*8K and above desktop styles go here (7680x3840)*/
+}
+
+/*Animation styles go here*/

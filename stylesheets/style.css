@@ -1,0 +1,219 @@
+/*General styles go here*/
+body
+{
+	background:#521989; /* For browsers that do not support gradients */
+	background:-webkit-linear-gradient(to bottom, #521989, #800020);
+	background:-o-linear-gradient(to bottom, #521989, #800020);
+	background:-moz-linear-gradient(to bottom, #521989, #800020);
+	background:linear-gradient(to bottom, #521989, #800020);
+	background-repeat:no-repeat;
+	max-width:100vw;
+	min-height:100vh;
+	margin:0px 0px 0px 0px;
+	font-family:Raleway, Noto Sans, Roboto, sans;
+	color:#EEEEEE;
+	text-shadow:.175vw .175vw .2vw #000000, 0px 0px .2vw #000000;
+	text-align:center;
+}
+
+.centered
+{
+	max-width:80%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+/*#banner
+{
+	margin:0px;
+	width:100%;
+	height:100vh;
+	background-image:url("../images/banner/Alex Knipper Banner.gif");
+	background-size:cover;
+	position:relative;
+}
+
+#page-title
+{
+	position:absolute;
+	top:20%;
+	left:27.5%;
+}*/
+
+/*Smaller mobile device styles go here*/
+p
+{
+	font-size:3vw;
+}
+
+h1
+{
+	font-size:5vw;
+	text-shadow:.2vw .2vw .3vw #000000, 0px 0px .3vw #000000;
+}
+
+h2
+{
+	font-size:4vw;
+}
+
+h3
+{
+	font-size:3.5vw;
+}
+
+a
+{
+	text-decoration:none;
+	font-size:3vw;
+}
+
+a:link, a:visited
+{
+	color:#00AAFF;
+	opacity:.75;
+}
+
+a:hover
+{
+	color:#FF00AA;
+	opacity:1;
+}
+
+@media only screen and (min-width: 638px)
+{
+	/*Larger mobile device styles go here*/
+	body
+	{
+		text-shadow:.15vw .15vw .175vw #000000, 0px 0px .175vw #000000;
+	}
+	
+	h1
+	{
+		text-shadow:.175vw .175vw .2vw #000000, 0px 0px .2vw #000000;
+	}
+	
+	p, a
+	{
+		font-size:2.5vw;
+	}
+}
+
+@media only screen and (min-width: 875px)
+{
+	/*Portrait-mode tablet styles go here*/
+	body
+	{
+		text-shadow:.125vw .125vw .15vw #000000, 0px 0px .15vw #000000;
+	}
+	
+	h1
+	{
+		text-shadow:.15vw .15vw .1vw #000000, 0px 0px .1vw #000000;
+	}
+	
+	h2
+	{
+		font-size:3.5vw;
+	}
+	
+	h3
+	{
+		font-size:2.5vw;
+	}
+}
+
+@media only screen and (min-width: 1050px)
+{
+	/*Landscape-mode tablet styles go here*/
+	body
+	{
+		text-shadow:.1vw .1vw .125vw #000000, 0px 0px .125vw #000000;
+	}
+	
+	h1
+	{
+		text-shadow:.125vw .125vw .25vw #000000, 0px 0px .25vw #000000;
+	}
+	
+	p, a
+	{
+		font-size:2vw;
+	}
+}
+
+@media only screen and (min-width: 1260px)
+{
+	/*720p desktop styles go here (1280x720)*/
+	h1
+	{
+		font-size:3.5vw;
+	}
+	
+	h2
+	{
+		font-size:2.5vw;
+	}
+	
+	h3
+	{
+		font-size:2vw;
+	}
+}
+
+@media only screen and (min-width: 1900px)
+{
+	/*1080p desktop styles go here (1920x1080)*/
+}
+
+@media only screen and (min-width: 2028px)
+{
+	/*2K desktop styles go here (2048x1080)*/
+}
+
+@media only screen and (min-width: 2540px)
+{
+	/*1440p desktop styles go here (2560x1440)*/
+}
+
+@media only screen and (min-width: 3120px)
+{
+	/*Intermediary breakpoint between 1440p and 4K*/
+}
+
+@media only screen and (min-width: 3820px)
+{
+	/*4K desktop styles go here (3840x2560)*/
+}
+
+@media only screen and (min-width: 4560px)
+{
+	/*Intermediary breakpoint 1 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 5240px)
+{
+	/*Intermediary breakpoint 2 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 5920px)
+{
+	/*Intermediary breakpoint 3 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 6880px)
+{
+	/*Intermediary breakpoint 4 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 7200px)
+{
+	/*Intermediary breakpoint 5 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 7660px)
+{
+	/*8K and above desktop styles go here (7680x3840)*/
+}
+
+/*Animation styles go here*/

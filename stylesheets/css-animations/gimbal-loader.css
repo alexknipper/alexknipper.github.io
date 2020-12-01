@@ -1,0 +1,343 @@
+/*
+	******************************Usage Guide: Gimbal Loaders******************************
+	- Store the gimbal rings in a square <div> and they will resize to fit.
+	- There are 10 rings, each with their own size and spin animation.
+	  - Use class:gimbal-ring<ring number> from 1 to 10 to get rings.
+	  - Add the rings to the document in descending order to make the z-indices work
+	- Each ring has two animations.
+	  - class:animated eases the animation into and out of the start/end
+	  - class:animated-linear has a linear timing
+	- Each ring has 3 variables:
+	  - --color:<color> (Default black)
+	  - --glow-color:<color> (Default white)
+	  - --inner-glow-color:<color> (Default transparent)
+	- Set variables by using style="<variables>"
+*/
+
+/*General styles go here*/
+[class^="gimbal-ring"]
+{
+	display:inline-block;
+	position:absolute;
+	border:1vw solid var(--color, black);
+	box-shadow:0px 0px 5vw var(--glow-color, white), 0px 0px 2.5vw var(--inner-glow-color, rgba(0,0,0,0)) inset;
+	border-radius:50%;
+	margin-top:-1vw;
+	margin-left:-1vw;
+}
+
+.gimbal-ring1
+{
+	width:80%;
+	height:80%;
+	top:10%;
+	left:10%;
+}
+.gimbal-ring1.animated
+{
+	animation: gimbal-spin1 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+}
+.gimbal-ring1.animated-linear
+{
+	animation: gimbal-spin1 5s linear infinite;
+}
+
+.gimbal-ring2
+{
+	width:72%;
+	height:72%;
+	top:14%;
+	left:14%;
+}
+.gimbal-ring2.animated
+{
+	animation: gimbal-spin2 4.75s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+}
+.gimbal-ring2.animated-linear
+{
+	animation: gimbal-spin2 4.75s linear infinite;
+}
+
+.gimbal-ring3
+{
+	width:64%;
+	height:64%;
+	top:18%;
+	left:18%;
+}
+.gimbal-ring3.animated
+{
+	animation: gimbal-spin3 4.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+}
+.gimbal-ring3.animated-linear
+{
+	animation: gimbal-spin3 4.5s linear infinite;
+}
+
+.gimbal-ring4
+{
+	width:56%;
+	height:56%;
+	top:22%;
+	left:22%;
+}
+.gimbal-ring4.animated
+{
+	animation: gimbal-spin4 4.25s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+}
+.gimbal-ring4.animated-linear
+{
+	animation: gimbal-spin4 4.25s linear infinite;
+}
+
+.gimbal-ring5
+{
+	width:48%;
+	height:48%;
+	top:26%;
+	left:26%;
+}
+.gimbal-ring5.animated
+{
+	animation: gimbal-spin5 4s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+}
+.gimbal-ring5.animated-linear
+{
+	animation: gimbal-spin5 4s linear infinite;
+}
+
+.gimbal-ring6
+{
+	width:40%;
+	height:40%;
+	top:30%;
+	left:30%;
+}
+.gimbal-ring6.animated
+{
+	animation: gimbal-spin2 3.75s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+}
+.gimbal-ring6.animated-linear
+{
+	animation: gimbal-spin2 3.75s linear infinite;
+}
+
+.gimbal-ring7
+{
+	width:32%;
+	height:32%;
+	top:34%;
+	left:34%;
+}
+.gimbal-ring7.animated
+{
+	animation: gimbal-spin5 3.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+}
+.gimbal-ring7.animated-linear
+{
+	animation: gimbal-spin5 3.5s linear infinite;
+}
+
+.gimbal-ring8
+{
+	width:24%;
+	height:24%;
+	top:38%;
+	left:38%;
+}
+.gimbal-ring8.animated
+{
+	animation: gimbal-spin3 3.25s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+}
+.gimbal-ring8.animated-linear
+{
+	animation: gimbal-spin3 3.25s linear infinite;
+}
+
+.gimbal-ring9
+{
+	width:16%;
+	height:16%;
+	top:42%;
+	left:42%;
+}
+.gimbal-ring9.animated
+{
+	animation: gimbal-spin4 3s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+}
+.gimbal-ring9.animated-linear
+{
+	animation: gimbal-spin4 3s linear infinite;
+}
+
+.gimbal-ring10
+{
+	width:8%;
+	height:8%;
+	top:46%;
+	left:46%;
+}
+.gimbal-ring10.animated
+{
+	animation: gimbal-spin1 2.75s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+}
+.gimbal-ring10.animated-linear
+{
+	animation: gimbal-spin1 2.75s linear infinite;
+}
+
+/*Smaller mobile device styles go here*/
+
+@media only screen and (min-width: 638px)
+{
+	/*Larger mobile device styles go here*/
+	[class^="gimbal-ring"]
+	{
+		border-width:.85vw;
+		margin-top:-.85vw;
+		margin-left:-.85vw;
+		box-shadow:0px 0px 4vw var(--glow-color, white), 0px 0px 2vw var(--inner-glow-color, rgba(0,0,0,0)) inset;
+	}
+}
+
+@media only screen and (min-width: 875px)
+{
+	/*Portrait-mode tablet styles go here*/
+	[class^="gimbal-ring"]
+	{
+		border-width:.825vw;
+		margin-top:-.825vw;
+		margin-left:-.825vw;
+		box-shadow:0px 0px 3.5vw var(--glow-color, white), 0px 0px 1.75vw var(--inner-glow-color, rgba(0,0,0,0)) inset;
+	}
+}
+
+@media only screen and (min-width: 1050px)
+{
+	/*Landscape-mode tablet styles go here*/
+	[class^="gimbal-ring"]
+	{
+		border-width:.8vw;
+		margin-top:-.8vw;
+		margin-left:-.8vw;
+		box-shadow:0px 0px 3vw var(--glow-color, white), 0px 0px 1.5vw var(--inner-glow-color, rgba(0,0,0,0)) inset;
+	}
+}
+
+@media only screen and (min-width: 1260px)
+{
+	/*720p desktop styles go here (1280x720)*/
+	[class^="gimbal-ring"]
+	{
+		border-width:.7vw;
+		margin-top:-.7vw;
+		margin-left:-.7vw;
+	}
+}
+
+@media only screen and (min-width: 1900px)
+{
+	/*1080p desktop styles go here (1920x1080)*/
+	[class^="gimbal-ring"]
+	{
+		border-width:.6vw;
+		margin-top:-.6vw;
+		margin-left:-.6vw;
+		box-shadow:0px 0px 2.5vw var(--glow-color, white), 0px 0px 1.25vw var(--inner-glow-color, rgba(0,0,0,0)) inset;
+	}
+}
+
+@media only screen and (min-width: 2028px)
+{
+	/*2K desktop styles go here (2048x1080)*/
+}
+
+@media only screen and (min-width: 2540px)
+{
+	/*1440p desktop styles go here (2560x1440)*/
+	[class^="gimbal-ring"]
+	{
+		border-width:.5vw;
+		margin-top:-.5vw;
+		margin-left:-.5vw;
+		box-shadow:0px 0px 2vw var(--glow-color, white), 0px 0px 1vw var(--inner-glow-color, rgba(0,0,0,0)) inset;
+	}
+}
+
+@media only screen and (min-width: 3120px)
+{
+	/*Intermediary breakpoint between 1440p and 4K*/
+	[class^="gimbal-ring"]
+	{
+		border-width:.4vw;
+		margin-top:-.4vw;
+		margin-left:-.4vw;
+		box-shadow:0px 0px 1.5vw var(--glow-color, white), 0px 0px .75vw var(--inner-glow-color, rgba(0,0,0,0)) inset;
+	}
+}
+
+@media only screen and (min-width: 3820px)
+{
+	/*4K desktop styles go here (3840x2560)*/
+}
+
+@media only screen and (min-width: 4560px)
+{
+	/*Intermediary breakpoint 1 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 5240px)
+{
+	/*Intermediary breakpoint 2 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 5920px)
+{
+	/*Intermediary breakpoint 3 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 6880px)
+{
+	/*Intermediary breakpoint 4 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 7200px)
+{
+	/*Intermediary breakpoint 5 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 7660px)
+{
+	/*8K and above desktop styles go here (7680x3840)*/
+}
+
+/*Animation styles go here*/
+@keyframes gimbal-spin1
+{
+	0% {transform: rotate(360deg) rotateY(360deg);}
+	100% {transform: rotate(0deg) rotateY(0deg);}
+}
+
+@keyframes gimbal-spin2
+{
+	0% {transform: rotate(360deg) rotateX(360deg);}
+	100% {transform: rotate(0deg) rotateX(0deg);}
+}
+
+@keyframes gimbal-spin3
+{
+	0% {transform: rotate(0deg) rotateY(0deg);}
+	100% {transform: rotate(180deg) rotateY(360deg);}
+}
+
+@keyframes gimbal-spin4
+{
+	0% {transform: rotate(0deg) rotateX(0deg) rotateY(0deg);}
+	100% {transform: rotate(360deg) rotateX(360deg) rotateY(360deg);}
+}
+
+@keyframes gimbal-spin5
+{
+	0% {transform: rotate(0deg) rotateX(0deg);}
+	100% {transform: rotate(180deg) rotateX(360deg);}
+}

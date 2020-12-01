@@ -1,0 +1,256 @@
+/*General styles go here*/
+#screenSaver
+{
+	display:none;
+	opacity:0;
+	/*background:linear-gradient(to bottom, #521989, #800020);*/
+	background-color:#521989;
+	background-repeat:no-repeat;
+	background-size:cover;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100vh;
+	z-index:9997;
+	/*transition:opacity .5s;*/
+}
+
+#fullscreenPlayer
+{
+	position:absolute;
+	top:0;
+	left:0;
+	background-image:url("../../images/banner/Alex Knipper Banner.gif");
+	background-size:cover;
+	opacity:.5;
+	width:100%;
+	height:100vh;
+	z-index:9998;
+}
+
+#screenDimmer
+{
+	position:absolute;
+	top:0;
+	left:0;
+	background-color:rgba(2,5,25,.75);
+	width:100%;
+	height:100vh;
+	z-index:9999;
+}
+
+#screenSaver.animated
+{
+	animation: colorShift 30s linear infinite;
+}
+
+@media (orientation:portrait)
+{
+	#animationContainer
+	{
+		width:100%;
+		height:0px;
+		padding-top:100%;
+		position:relative;
+		top:50%;
+		left:0;
+		margin-top:-50vw;
+		/*background-color:rgba(0,255,0,.5);*/
+	}
+}
+
+@media (orientation:landscape)
+{
+	#animationContainer
+	{
+		max-width:100vh;
+		height:100%;
+		position:relative;
+		top:0;
+		left:50%;
+		margin-left:-50vh;
+		/*background-color:rgba(0,0,255,.5);*/
+	}
+}
+
+.animationContainer
+{
+	width:60vw;
+	height:65vw;
+	background-color:rgba(2,5,25,.5);
+	background-size:cover;
+	box-shadow:.2vw .2vw .4vw #000000;
+	display:inline-block;
+	margin:2.5vw;
+	position:relative;
+	border-radius:2.5%;
+	transition: box-shadow .15s;
+	-webkit-user-select: none; /* Safari 3.1+ */
+	-moz-user-select: none; /* Firefox 2+ */
+	-ms-user-select: none; /* IE 10+ */
+	user-select: none; /* Standard syntax */
+}
+
+.animationContainer:hover
+{
+	box-shadow:.2vw .2vw .4vw #00FFFF;
+}
+
+div.animation
+{
+	display:inline-block;
+	position:relative;
+	top:0;
+	left:0;
+	width:100%;
+	padding-top:100%;
+	margin:0px;
+	/*border:1px solid orangered;*/
+}
+
+p.animation
+{
+	margin:0vw auto;
+	width:80%;
+}
+
+div.animation-small
+{
+	display:inline-block;
+	position:relative;
+	top:0%;
+	left:0%;
+	width:80%;
+	padding-top:80%;
+	margin:10% 0px;
+	/*border:1px solid orangered;*/
+}
+
+/*Smaller mobile device styles go here*/
+
+@media only screen and (min-width: 638px)
+{
+	/*Larger mobile device styles go here*/
+	.animationContainer
+	{
+		width:40vw;
+		height:45vw;
+	}
+	
+	p.animation
+	{
+		margin-top:.25vw;
+	}
+}
+
+@media only screen and (min-width: 875px)
+{
+	/*Portrait-mode tablet styles go here*/
+	.animationContainer
+	{
+		width:35vw;
+		height:40vw;
+	}
+}
+
+@media only screen and (min-width: 1050px)
+{
+	/*Landscape-mode tablet styles go here*/
+	p.animation
+	{
+		margin-top:.75vw;
+	}
+}
+
+@media only screen and (min-width: 1260px)
+{
+	/*720p desktop styles go here (1280x720)*/
+	.animationContainer
+	{
+		width:30vw;
+		height:35vw;
+	}
+	
+	p.animation
+	{
+		margin-top:1vw;
+	}
+}
+
+@media only screen and (min-width: 1900px)
+{
+	/*1080p desktop styles go here (1920x1080)*/
+}
+
+@media only screen and (min-width: 2028px)
+{
+	/*2K desktop styles go here (2048x1080)*/
+}
+
+@media only screen and (min-width: 2540px)
+{
+	/*1440p desktop styles go here (2560x1440)*/
+	.animationContainer
+	{
+		width:25vw;
+		height:30vw;
+	}
+}
+
+@media only screen and (min-width: 3120px)
+{
+	/*Intermediary breakpoint between 1440p and 4K*/
+	.animationContainer
+	{
+		width:20vw;
+		height:25vw;
+	}
+}
+
+@media only screen and (min-width: 3820px)
+{
+	/*4K desktop styles go here (3840x2560)*/
+}
+
+@media only screen and (min-width: 4560px)
+{
+	/*Intermediary breakpoint 1 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 5240px)
+{
+	/*Intermediary breakpoint 2 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 5920px)
+{
+	/*Intermediary breakpoint 3 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 6880px)
+{
+	/*Intermediary breakpoint 4 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 7200px)
+{
+	/*Intermediary breakpoint 5 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 7660px)
+{
+	/*8K and above desktop styles go here (7680x3840)*/
+}
+
+/*Animation styles go here*/
+@keyframes colorShift
+{
+	0% {background-color:#521989;}
+	16.6% {background-color:#690D56;}
+	33.3% {background-color:#800020;}
+	50% {background-color:#D40220;}
+	66.6% {background-color:#800020;}
+	83.3% {background-color:#690D56;}
+	100% {background-color:#521989;}
+}
