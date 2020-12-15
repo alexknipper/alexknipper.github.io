@@ -6,10 +6,10 @@ function loadTheme() {
 function setTheme(name) {
     switch (name.toLower()) {
         case 'dark':
-            document.documentElement.style.setProperty('--background-color', '#121212');
+            document.documentElement.style.setProperty('--background-color', '25, 25, 25');
             break;
         case 'light':
-            document.documentElement.style.setProperty('--background-color', '#CDCDCD');
+            document.documentElement.style.setProperty('--background-color', '240, 240, 240');
             break;
     }
 }

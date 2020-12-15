@@ -1,12 +1,68 @@
 /*General styles go here*/
 :root
 {
-	--background-color:#121212;/*CDCDCD*/
+	width:100%;
+	height:100%;
+	font-size:2vmin;
+	--background-color:25, 25, 25;/*CDCDCD*/
+	overflow:hidden;
 }
 
 body
 {
-	background:var(--background-color);
+	width:100%;
+	height:auto;
+	min-height:calc(100% - var(--navbar-height));
+	margin:0%;
+	padding:var(--navbar-height) 0% 0% 0%;
+	background:rgb(var(--background-color));
+	font-family:'Noto Sans JP', sans-serif;
+}
+
+@media only screen and (min-width:1024px)
+{
+	:root
+	{
+		font-size:1.85vmin;
+	}
+
+	@media only screen and (orientation:portrait)
+	{
+		:root
+		{
+			font-size:1.25vmin;
+		}
+	}
+}
+@media only screen and (min-width:3820px)
+{
+	:root
+	{
+		font-size:1.25vmin;
+	}
+
+	@media only screen and (orientation:portrait)
+	{
+		:root
+		{
+			font-size:1vmin;
+		}
+	}
+}
+@media only screen and (min-width:7640px)
+{
+	:root
+	{
+		font-size:1vmin;
+	}
+
+	@media only screen and (orientation:portrait)
+	{
+		:root
+		{
+			font-size:.75vmin;
+		}
+	}
 }
 
 /*Smaller mobile device styles go here*/

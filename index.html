@@ -12,7 +12,13 @@
 
  <title>Alex Knipper Home</title>
  
- <link rel="shortcut icon" href="path_to_icon"/>
+ <link rel="shortcut icon" href="_static/images/logo/main_icon.ico"/>
+
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+ <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cabin:wght@500&family=Dancing+Script:wght@500&family=Great+Vibes&family=Noto+Sans+JP&family=Noto+Serif+JP:wght@500&family=Parisienne&family=Roboto&family=Roboto+Slab&family=Tangerine&display=swap" rel="stylesheet">
+
+ <script src="https://kit.fontawesome.com/b657a3b372.js" crossorigin="anonymous"></script>
  
  <link type="text/css" rel="stylesheet" href="_static/stylesheets/style.css"/>
  <link type="text/css" rel="stylesheet" href="_static/stylesheets/navbar.css"/>
@@ -20,8 +26,44 @@
  </head>
  <body>
 	<div id="background-animation"></div>
-	<div id="content"></div>
-	<div id="navbar"></div>
+	<header id="ak-navbar">
+		<a href="https://en.d4dj-pj.com/"><img id="ak-navbar-icon" src="_static/images/logo/main_icon.png"/></a>
+		<div id="ak-navbar-hamburger"><span></span><span></span></div>
+		<nav id="ak-navbar-main">
+			<div id="ak-navbar-links">
+				<a href="./">Portfolio</a>
+				<a href="./">Academics</a>
+				<a href="./">Publications</a>
+				<a href="./">Teaching</a>
+				<a href="./">Projects</a>
+				<a href="./">Side Interests</a>
+				<!--<p>test 1</p>
+				<p>test 2</p>
+				<p>test 3</p>
+				<p>test 4</p>
+				<p>test 5</p>
+				<p>test 6</p>
+				<p>test 7</p>
+				<p>test 8</p>
+				<p>test 9</p>
+				<p>test 10</p>-->
+			</div>
+			<div id="ak-navbar-social">
+				<a href="./" style="--color:#4064ac"><i class="fab fa-facebook"></i></a>
+				<a href="./" style="--color:#d62977"><i class="fab fa-instagram"></i></a>
+				<a href="./" style="--color:#1c9cea"><i class="fab fa-twitter"></i></a>
+				<p><i class="fa fa-angle-down"></i></p>
+				<div>
+					<a href="./" style="--color:#0e76a8"><i class="fab fa-linkedin"></i></a>
+					<a href="./" style="--color:#e62117"><i class="fab fa-youtube"></i></a>
+					<a href="./" style="--color:#6f42c1"><i class="fab fa-github"></i></a>
+					<a href="./" style="--color:#5f95a4"><i class="fab fa-bandcamp"></i></a>
+					<a href="./" style="--color:aqua"><i class="fab fa-slack"></i></a>
+				</div>
+			</div>
+		</nav>
+	</header>
  </body>
  <script src="_static/scripts/themes.js"></script>
+ <script src="_static/scripts/navbar.js" onload="addAKNavbarEvents();"></script>
  </html>
