@@ -1,0 +1,55 @@
+/*
+    ak-bg-anim.css
+    This stylesheet is designed to add an easy set of background animations to a website. Requires companion script ak-bg-anim.js for full functionality
+    Alex Knipper
+
+    To use, copy the following HTML code:
+*/
+
+:root
+{
+    --main-color:255, 0, 170;
+}
+
+#ak-bg-anim
+{
+    position:fixed;
+    top:0%;
+    left:0%;
+    width:100%;
+    height:100%;
+}
+
+#ak-bg-anim span
+{
+    position:absolute;
+}
+
+@keyframes fall
+{
+    from {top:-5%;}
+    to {top:105%;}
+}
+
+@keyframes sway
+{
+    from {left:calc(var(--position) - var(--offset))}
+    to {left:calc(var(--position) + var(--offset))}
+}
+
+@keyframes spin
+{
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+.starfall .variant1
+{
+    color:pink;
+    left:var(--position);
+    /*font-size:calc(15em * var(--scale));*/
+    animation:fall, spin;
+    animation-duration:var(--fall-time), var(--spin-time);
+    animation-iteration-count:infinite, infinite;
+    animation-timing-function:linear, linear;
+}
