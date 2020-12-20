@@ -5,7 +5,7 @@
 	height:100%;
 	font-size:2vmin;
 	--background-color:25, 25, 25;/*CDCDCD*/
-	overflow:hidden;
+	overflow-x:hidden;
 }
 
 body

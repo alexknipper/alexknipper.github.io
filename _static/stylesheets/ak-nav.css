@@ -1,0 +1,404 @@
+/*
+    ak-nav.css
+    This stylesheet is designed to add an easy navbar to a website. Requires companion script ak-navbar.js for full functionality
+    Alex Knipper
+
+    To use, copy the following HTML code:
+    <header id="ak-nav">
+        <a href="./"><img id="ak-nav-icon" src="./"/></a>
+        <div id="ak-nav-hamburger"></div>
+        <nav id="ak-nav-main">
+            <div id="ak-nav-links">
+                <a href="./">Link</a>
+            </div>
+            <div id="ak-nav-social">
+                <a href="./" style="--color:red"><i class="fab fa-facebook"></i></a>
+            </div>
+        </nav>
+    </header>
+*/
+
+:root
+{
+    --nav-color:var(--background-color);
+    --nav-text-color:240, 240, 240;
+	--nav-accent-color:255, 0, 170;
+	--nav-height:7.5rem;
+	--nav-padding:1.5%;
+	--nav-font:'Noto Sans JP', sans-serif;
+	--nav-font-style:italic;
+	--nav-transition-time:.5s;
+	--nav-display:mobile;
+	/*Assumes :root has been set to 2vmin*/
+}
+
+#ak-nav
+{
+    position:fixed;
+    top:0%;
+    left:0%;
+    width:calc(100% - var(--nav-padding));
+    height:var(--nav-height);
+    background:linear-gradient(rgba(var(--nav-color), 1), rgba(var(--nav-color), .85) 5%, rgba(var(--nav-color), 0));
+    padding:0% var(--nav-padding) 0% calc(var(--nav-padding) * 2);
+    z-index:1;
+    -webkit-user-select: none; /* Safari 3.1+ */
+	-moz-user-select: none; /* Firefox 2+ */
+	-ms-user-select: none; /* IE 10+ */
+	user-select: none; /* Standard syntax */
+	--icon-height:1.65;
+}
+#ak-nav.scrolled, #ak-nav.opened
+{
+    --icon-height:.95;
+}
+
+#ak-nav-icon
+{
+    position:absolute;
+    top:5%;
+    left:var(--nav-padding);
+    width:auto;
+    height:calc(var(--nav-height) * var(--icon-height));
+    max-width:calc(var(--nav-height) * var(--icon-height) * 1.5);
+	transition:height calc(var(--nav-transition-time) / 2), width calc(var(--nav-transition-time) / 2);
+	z-index:2;
+}
+
+#ak-nav-hamburger
+{
+    position:absolute;
+    top:12.5%;
+	right:var(--nav-padding);
+	margin-right:calc(var(--nav-padding) * 2);
+	width:calc(var(--nav-height) / 3 * 2);
+	height:calc(var(--nav-height) / 3 * 2);
+	background-color:rgba(var(--nav-color), .35);
+	border:.25em rgb(var(--nav-text-color)) solid;
+	border-radius:calc(95%);
+	z-index:2;
+}
+
+#ak-nav-hamburger::before, #ak-nav-hamburger::after
+{
+    content:'';
+    position:absolute;
+	left:calc(17.5% - .05em);
+	width:65%;
+	height:.5%;
+	background-color:rgb(var(--nav-text-color));
+	border:.1em rgb(var(--nav-text-color)) solid;
+	border-radius:5em;
+	transition:transform calc(var(--nav-transition-time) / 1.75), top calc(var(--nav-transition-time) / 3);
+}
+#ak-nav-hamburger::before
+{
+	top:40%;
+}
+#ak-nav-hamburger::after
+{
+	top:54%;
+}
+#ak-nav.opened > #ak-nav-hamburger::before
+{
+	top:47%;
+	transform: rotate(140deg);
+}
+#ak-nav.opened > #ak-nav-hamburger::after
+{
+	top:47%;
+	transform: rotate(-140deg);
+}
+
+#ak-nav:not(.opened) > #ak-nav-main
+{
+    opacity:0;
+    visibility:hidden;
+}
+#ak-nav:not(.opened) > #ak-nav-main > #ak-nav-links > a::after, #ak-nav:not(.opened) > #ak-nav-main > #ak-nav-links > p::after
+{
+	width:0%;
+	left:50%;
+}
+#ak-nav-main
+{
+    position:fixed;
+    top:0%;
+    left:0%;
+    width:100%;
+    height:calc(100% - var(--nav-height) - 5em);
+    background-color:rgba(var(--nav-color), .5);
+    padding-top:var(--nav-height);
+    padding-bottom:5em;
+    overflow-x:hidden;
+    opacity:1;
+    visibility:visible;
+    transition:visibility 0s, opacity calc(var(--nav-transition-time) / 2);
+}
+
+#ak-nav-links > a, #ak-nav-links > p
+{
+    display:inline-block;
+    width:100%;
+    height:auto;
+    margin:0%;
+    text-align:center;
+    font-size:3em;
+    font-family:var(--nav-font);
+    font-style:var(--nav-font-style);
+    color:rgb(var(--nav-text-color));
+    padding-top:calc(var(--nav-height) / 2.5);
+    padding-bottom:calc(var(--nav-height) / 4);
+    text-decoration:none;
+}
+#ak-nav-links > a::after, #ak-nav-links > p::after
+{
+    content:' ';
+    display:block;
+    position:relative;
+    top:calc(var(--nav-height) / 3);
+    left:0%;
+    width:100%;
+    height:.125rem;
+    margin:0%;
+    text-align:center;
+    background:linear-gradient(to right, rgba(var(--nav-accent-color), 0) 10%, rgba(var(--nav-accent-color), 1), rgba(var(--nav-accent-color), 0) 90%);
+    transition:width var(--nav-transition-time), left var(--nav-transition-time);
+    transition-delay:calc(var(--nav-transition-time) / 4);
+}
+#ak-nav-links > a:hover
+{
+    cursor:pointer;
+}
+
+#ak-nav-social
+{
+    width:50%;
+    height:auto;
+    margin:7.5rem 10% 0% 10%;
+    padding:1.25em calc(15% - .25em) 2em calc(15% - .25em);
+    border:.25em solid rgb(var(--nav-text-color));
+    border-radius:2.5em;
+    text-align:center;
+}
+#ak-nav-social::before
+{
+    content:"Social";
+    display:block;
+    width:100%;
+    height:auto;
+    margin-bottom:2rem;
+    font-size:2.5rem;
+    font-family:var(--nav-font);
+    font-style:var(--nav-font-style);
+    color:rgb(var(--nav-text-color));
+    text-align:center;
+}
+#ak-nav-social > a
+{
+    display:inline-block;
+    margin:0% 5%;
+    font-size:3.5rem;
+    color:var(--color, rgb(var(--nav-text-color)));
+}
+
+@media only screen and (orientation:landscape), (min-width:1024px)
+{
+    :root
+    {
+        --nav-height:5em;
+        --nav-display:desktop;
+    }
+
+    #ak-nav.opened:not(.scrolled)
+    {
+        --icon-height:1.65;
+    }
+
+    #ak-nav-hamburger
+    {
+        display:none;
+    }
+
+    #ak-nav:not(.opened) > #ak-nav-main
+    {
+        opacity:1;
+        visibility:visible;
+    }
+    #ak-nav-main
+    {
+        left:calc((var(--nav-height) * 1.65 * 1.5) + (var(--nav-padding) * 2));
+		width:calc(100% - (var(--nav-height) * 1.65 * 1.5) - (var(--nav-padding) * 3));
+		height:var(--nav-height);
+		background-color:rgba(var(--nav-color), 0);
+		padding:0%;
+		overflow:visible;
+		opacity:1;
+    }
+
+    #ak-nav-links
+    {
+        display:inline-block;
+        position:absolute;
+        top:0;
+        left:0;
+        width:calc(77.5% - var(--nav-padding));
+        height:100%;
+        text-align:center;
+    }
+    #ak-nav-links > a, #ak-nav-links > p, #ak-nav-links > div:last-of-type > p:first-child
+    {
+        width:auto;
+        height:auto;
+        font-size:1.1rem;
+        margin:0% .75rem;
+        padding:1rem 0% 0% 0%;
+        transition:text-shadow var(--nav-transition-time);
+    }
+    #ak-nav-links > a:hover, #ak-nav-links > div > div > a:hover
+	{
+		text-shadow:0em 0em .25em rgb(var(--nav-accent-color))
+    }
+    #ak-nav:not(.opened) > #ak-nav-main > #ak-nav-links > a::after, #ak-nav:not(.opened) > #ak-nav-main > #ak-nav-links > p::after
+	{
+		width:.1rem;
+		left:-50%;
+	}
+    #ak-nav-links > a::after
+	{
+		content:' ';
+		display:inline-block;
+        top:calc(var(--nav-height) / 2);
+        left:-50%;
+        width:.1rem;
+		height:2rem;
+		background:rgb(var(--nav-text-color));
+		transform:scaleY(0);
+		transform-origin:0 0;
+		transition:transform calc(var(--nav-transition-time) / 1.5), filter var(--nav-transition-time);
+		transition-delay:0s;
+    }
+    #ak-nav-links > a:hover::after
+	{
+		transform:scaleY(1);
+		filter:drop-shadow(0px 0px .1em rgb(var(--nav-accent-color)));
+    }
+    #ak-nav-links > div:last-of-type
+    {
+        display:inline-block;
+        position:relative;
+    }
+    #ak-nav-links > div:last-of-type > p:first-child
+    {
+        display:inline-block;
+        width:auto;
+		height:auto;
+		font-size:1.1rem;
+		margin:0% .75rem;
+		padding:1rem 0% 0% 0%;
+		font-family:var(--nav-font);
+		font-style:var(--nav-font-style);
+		color:rgb(var(--nav-text-color));
+		cursor:pointer;
+    }
+    #ak-nav-links > div:last-of-type > div
+	{
+		position:absolute;
+		top:0;
+		left:0;
+		width:auto;
+		overflow-x:hidden;
+		overflow-y:auto;
+		padding-top:3em;
+		padding-left:.5rem;
+		opacity:0;
+		visibility:hidden;
+		transition:transition 0s, opacity calc(var(--nav-transition-time) / 4);
+    }
+    #ak-nav-links > div:last-of-type:hover > div, #k-nav-links > div:last-of-type > div:hover
+	{
+		opacity:1;
+		visibility:visible;
+    }
+    #ak-nav-links > div:last-of-type > div > a
+	{
+		display:block;
+		font-size:1.1rem;
+		margin:.75rem .25rem .75rem 0%;
+		font-family:var(--nav-font);
+		font-style:var(--nav-font-style);
+		color:rgb(var(--nav-text-color));
+		text-decoration:none;
+		text-align:left;
+		white-space:nowrap;
+		transition:text-shadow var(--nav-transition-time);
+		cursor:pointer;
+    }
+    
+    #ak-nav-social
+    {
+        display:inline-block;
+        position:absolute;
+        top:25%;
+        right:0%;
+        width:calc(22.5% - 1.5em);
+        height:calc(45% - .5em);
+		margin:0% 0% 0% var(--nav-padding);
+		padding:.25em .75em .5em .75em;
+		border-width: .15em;
+		text-align:center;
+    }
+    #ak-nav-social::before
+	{
+		content:"Social:";
+		display:inline-block;
+		position:relative;
+		top:-.1em;
+		width:auto;
+		height:100%;
+		margin-bottom:0%;
+		margin-right:5%;
+		font-size:1rem;
+    }
+    #ak-nav-social > a, #ak-nav-social > div:last-of-type > p, #ak-nav-social > div:last-of-type > div > a
+    {
+        width:1.1em;
+        margin:0% 2%;
+        font-size:1.25rem;
+        color:rgb(var(--nav-text-color));
+        transition:text-shadow calc(var(--nav-transition-time) / 3);
+        cursor:pointer;
+    }
+    #ak-nav-social > div:last-of-type > div > a
+    {
+        display:block;
+        margin:.2em .2em .2em 0%;
+    }
+    #ak-nav-social > a:hover, #ak-nav-social > div:last-of-type > div > a:hover
+    {
+        text-shadow:0px 0px .35em var(--color, rgb(var(--nav-accent-color)));
+    }
+    #ak-nav-social > div:last-of-type
+    {
+        position:relative;
+        display:inline-block;
+        width:1.1em;
+        height:100%;
+    }
+    #ak-nav-social > div:last-of-type > div
+    {
+        position:absolute;
+		top:0%;
+		left:0%;
+		padding-top:2.5em;
+		overflow-x:hidden;
+		opacity:0;
+		visibility:hidden;
+		transition:transition 0s, opacity calc(var(--nav-transition-time) / 4);
+    }
+    #ak-nav-social > div:last-of-type:hover > div, #ak-nav-social > div:last-of-type > div:hover
+	{
+		opacity:1;
+		visibility:visible;
+	}
+}

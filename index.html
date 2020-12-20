@@ -20,50 +20,38 @@
 
  <script src="https://kit.fontawesome.com/b657a3b372.js" crossorigin="anonymous"></script>
  
+ <link type="text/css" rel="stylesheet" href="_static/stylesheets/ak-nav.css"/>
+ <link type="text/css" rel="stylesheet" href="_static/stylesheets/ak-bg-anim.css"/>
  <link type="text/css" rel="stylesheet" href="_static/stylesheets/style.css"/>
- <link type="text/css" rel="stylesheet" href="_static/stylesheets/navbar.css"/>
 
  </head>
  <body>
-	<div id="background-animation"></div>
-	<header id="ak-navbar">
-		<a href="https://en.d4dj-pj.com/"><img id="ak-navbar-icon" src="_static/images/logo/main_icon.png"/></a>
-		<div id="ak-navbar-hamburger"><span></span><span></span></div>
-		<nav id="ak-navbar-main">
-			<div id="ak-navbar-links">
+	<div id="ak-bg-anim"></div>
+	<header id="ak-nav">
+		<a href="https://en.d4dj-pj.com/"><img id="ak-nav-icon" src="_static/images/logo/main_icon.png"/></a>
+		<div id="ak-nav-hamburger"></div>
+		<nav id="ak-nav-main">
+			<div id="ak-nav-links">
 				<a href="./">Portfolio</a>
 				<a href="./">Academics</a>
 				<a href="./">Publications</a>
 				<a href="./">Teaching</a>
 				<a href="./">Projects</a>
 				<a href="./">Side Interests</a>
-				<!--<p>test 1</p>
-				<p>test 2</p>
-				<p>test 3</p>
-				<p>test 4</p>
-				<p>test 5</p>
-				<p>test 6</p>
-				<p>test 7</p>
-				<p>test 8</p>
-				<p>test 9</p>
-				<p>test 10</p>-->
 			</div>
-			<div id="ak-navbar-social">
-				<a href="./" style="--color:#4064ac"><i class="fab fa-facebook"></i></a>
-				<a href="./" style="--color:#d62977"><i class="fab fa-instagram"></i></a>
-				<a href="./" style="--color:#1c9cea"><i class="fab fa-twitter"></i></a>
-				<p><i class="fa fa-angle-down"></i></p>
-				<div>
-					<a href="./" style="--color:#0e76a8"><i class="fab fa-linkedin"></i></a>
-					<a href="./" style="--color:#e62117"><i class="fab fa-youtube"></i></a>
-					<a href="./" style="--color:#6f42c1"><i class="fab fa-github"></i></a>
-					<a href="./" style="--color:#5f95a4"><i class="fab fa-bandcamp"></i></a>
-					<a href="./" style="--color:aqua"><i class="fab fa-slack"></i></a>
-				</div>
+			<div id="ak-nav-social">
+				<a href="https://www.facebook.com/alex.knipper.37" style="--color:#4064ac"><i class="fab fa-facebook"></i></a>
+				<a href="https://www.instagram.com/alex.knipper/" style="--color:#d62977"><i class="fab fa-instagram"></i></a>
+				<a href="https://twitter.com/AlexKnipper" style="--color:#1c9cea"><i class="fab fa-twitter"></i></a>
+				<a href="https://www.linkedin.com/in/alex-knipper/" style="--color:#0e76a8"><i class="fab fa-linkedin"></i></a>
+				<a href="https://github.com/alexknipper" style="--color:#6f42c1"><i class="fab fa-github"></i></a>
+				<a href="https://www.youtube.com/channel/UCulNQAsZYn025HDWIvZ1Y2A" style="--color:#e62117"><i class="fab fa-youtube"></i></a>
+				<a href="https://alexknipper.bandcamp.com/music" style="--color:#5f95a4"><i class="fab fa-bandcamp"></i></a>
 			</div>
 		</nav>
 	</header>
+	<div style="width:80%;margin-left:10%;height:120vh;background-color:slateblue;opacity:.1;"></div>
  </body>
- <script src="_static/scripts/themes.js"></script>
- <script src="_static/scripts/navbar.js" onload="addAKNavbarEvents();"></script>
+ <script src="_static/scripts/themes.js" onload="loadTheme();"></script>
+ <script src="_static/scripts/ak-nav.js" onload="addAKNavbarEvents();"></script>
  </html>
