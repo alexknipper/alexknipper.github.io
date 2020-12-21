@@ -6,11 +6,6 @@
     To use, copy the following HTML code:
 */
 
-:root
-{
-    --main-color:255, 0, 170;
-}
-
 #ak-bg-anim
 {
     position:fixed;
@@ -27,14 +22,14 @@
 
 @keyframes fall
 {
-    from {top:-5%;}
-    to {top:105%;}
+    from {top:calc(-5% - var(--size, 1em));}
+    to {top:calc(105% + var(--size, 1em));}
 }
 
 @keyframes sway
 {
-    from {left:calc(var(--position) - var(--offset))}
-    to {left:calc(var(--position) + var(--offset))}
+    from {left:calc(var(--position) - var(--sway-offset))}
+    to {left:calc(var(--position) + var(--sway-offset))}
 }
 
 @keyframes spin
@@ -43,13 +38,22 @@
     to {transform:rotate(360deg);}
 }
 
-.starfall .variant1
+.starfall span
 {
-    color:pink;
-    left:var(--position);
-    /*font-size:calc(15em * var(--scale));*/
+    display:flex;
+    top:calc(-5% - var(--size, 1em));
+    left:var(--position, 0%);
+    color:var(--color, white);
+    font-size:var(--size, 1em);
+    justify-content:center;
+    align-items:center;
     animation:fall, spin;
-    animation-duration:var(--fall-time), var(--spin-time);
+    animation-duration:var(--fall-time, 16s), var(--spin-time, 4s);
     animation-iteration-count:infinite, infinite;
     animation-timing-function:linear, linear;
+    animation-delay:var(--delay, 0s), 0s;
+}
+.reverse.starfall span
+{
+    animation-direction: reverse, reverse;
 }

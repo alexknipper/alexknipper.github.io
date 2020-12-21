@@ -26,9 +26,7 @@
 
  </head>
  <body>
-	<div id="ak-bg-anim" class="starfall">
-		<span class="variant1" style="--position:25%;--scale:1;--fall-time:12s;--spin-time:4s;"><i class="fas fa-star"></i></span>
-	</div>
+	<div id="ak-bg-anim"></div>
 	<header id="ak-nav">
 		<a href="https://en.d4dj-pj.com/"><img id="ak-nav-icon" src="_static/images/logo/main_icon.png"/></a>
 		<div id="ak-nav-hamburger"></div>
@@ -56,4 +54,5 @@
  </body>
  <script src="_static/scripts/themes.js" onload="loadTheme();"></script>
  <script src="_static/scripts/ak-nav.js" onload="addAKNavbarEvents();"></script>
+ <script src="_static/scripts/ak-bg-anim.js" onload="startAnimCycle('reverse starfall')"></script>
  </html>
