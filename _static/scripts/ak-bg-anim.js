@@ -18,11 +18,11 @@ function startAnimCycle(animName) {
     switch (animName) {
         case 'starfall':
             animElem.className = 'starfall';
-            spawnAnimElements(12, 2.5, '<i class="fas fa-star"></i>' , {"color":['lightpink', 'lightyellow', 'lightgreen', 'lightcyan', 'lavender'], "size":[1,2.7], "fall-time":[12,30], "spin-time":[2,5.5], "delay":[0,10], "units":['', 'em', 's', 's', 's']})
+            spawnAnimElements(12, 2.5, '<i class="fas fa-star"></i>' , {"color":['lightpink', 'lightyellow', 'lightgreen', 'lightcyan', 'lavender'], "size":[1,2.7], "fall-time":[12,30], "spin-time":[2.5,6], "delay":[0,10], "units":['', 'em', 's', 's', 's']})
             break;
         case 'reverse starfall':
             animElem.className = 'reverse starfall';
-            spawnAnimElements(12, 2.5, '<i class="fas fa-star"></i>' , {"color":['lightpink', 'lightyellow', 'lightgreen', 'lightcyan', 'lavender'], "size":[1,2.7], "fall-time":[12,30], "spin-time":[2,5.5], "delay":[0,10], "units":['', 'em', 's', 's', 's']})
+            spawnAnimElements(12, 2.5, '<i class="fas fa-star"></i>' , {"color":['lightpink', 'lightyellow', 'lightgreen', 'lightcyan', 'lavender'], "size":[1,2.7], "fall-time":[12,30], "spin-time":[2.5,6], "delay":[0,10], "units":['', 'em', 's', 's', 's']})
             break;
         case 'magic':
             break;
