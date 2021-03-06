@@ -4,6 +4,7 @@
     Alex Knipper
 
     To use, copy the following HTML code:
+    <div id="ak-bg-anim"></div>
 */
 
 #ak-bg-anim
@@ -28,8 +29,8 @@
 
 @keyframes sway
 {
-    from {left:calc(var(--position) - var(--sway-offset))}
-    to {left:calc(var(--position) + var(--sway-offset))}
+    from {left:calc(var(--position) - var(--sway-offset, 2.5%))}
+    to {left:calc(var(--position) + var(--sway-offset, 2.5%))}
 }
 
 @keyframes spin
@@ -56,4 +57,50 @@
 .reverse.starfall span
 {
     animation-direction: reverse, reverse;
+}
+
+.magic span
+{
+    display:flex;
+    top:calc(-5% - var(--size, 1em));
+    left:var(--position, 0%);
+    color:var(--color, white);
+    font-size:var(--size, 1em);
+    text-shadow:0px 0px calc(var(--size, 1em) / 2.75) var(--color, white);
+    animation:fall, sway, spin;
+    animation-duration:var(--fall-time, 16s), var(--sway-time, 4s), var(--spin-time, 10s);
+    animation-iteration-count:infinite, infinite, infinite;
+    animation-timing-function:linear, cubic-bezier(0.37, 0, 0.63, 1), linear;
+    animation-direction: reverse, alternate, var(--anim-dir, normal);
+    animation-delay:var(--delay, 0s), 0s;
+}
+.reverse.magic span
+{
+    animation-direction: normal, alternate, var(--anim-dir, normal);
+}
+
+.snow span
+{
+    display:flex;
+    top:calc(-5% - var(--size, 1em));
+    left:var(--position, 0%);
+    background-color:var(--color, white);
+    width:calc(var(--size, 1em) / 10);
+    border-radius:50%;
+    animation:fall, sway;
+    animation-duration:var(--fall-time, 16s), var(--sway-time, 4s);
+    animation-iteration-count:infinite, infinite;
+    animation-timing-function:linear, cubic-bezier(0.37, 0, 0.63, 1);
+    animation-direction: normal, alternate;
+    animation-delay:var(--delay, 0s), 0s;
+}
+.snow span:after
+{
+    content:"";
+    display:block;
+    padding-bottom:100%;
+}
+.reverse.snow span
+{
+    animation-direction: reverse, alternate;
 }
