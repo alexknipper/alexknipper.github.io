@@ -1,6 +1,5 @@
 // ak-bg-anim.js
 // This file is designed to accompany the ak-bg-anim.css stylesheet and provide several critical functions
-// This script requires the ak-bg-anim.json file to specify animation values
 // Alex Knipper
 
 var animations = {
@@ -68,14 +67,12 @@ var animations = {
 
 var animationDates = {
     "default":"magic",
-    "1/1-12/31":"magic",
-    "1/1-2/20":"snow",
-    "12/1-12/31":"snow",
-    "1/1-3/5":"winter magic",
-    "3/6-5/20":"vernal magic",
-    "5/21-8/20":"summer magic",
-    "8/21-11/30":"autumnal magic",
-    "12/1-12/31":"winter magic",
+    "1/1-1/8":"snow",
+    "12/1-12/24":"snow",
+    "3/21":"vernal magic",
+    "6/21":"summer magic",
+    "9/21":"autumnal magic",
+    "12/25-12/31":"winter magic",
     "2/14":"crimson magic"
 }
 
