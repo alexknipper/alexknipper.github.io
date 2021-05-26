@@ -281,7 +281,7 @@
     #ak-nav-links > a:hover::after
 	{
 		transform:scaleY(1);
-		filter:drop-shadow(0px 0px .1em rgb(var(--nav-accent-color)));
+		filter:drop-shadow(0px 0px .5em rgb(var(--nav-accent-color)));
     }
     #ak-nav-links > div:last-of-type
     {
