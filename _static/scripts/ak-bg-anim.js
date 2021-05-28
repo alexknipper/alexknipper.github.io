@@ -120,7 +120,7 @@ function startAnimCycle(animName) {
             spawnAnimElements(12, 2.5, '<i class="fas fa-star"></i>', animSplit, 25000);
             break;
         case 'magic':
-            spawnAnimElements(25, 2.5, '&#128964;', animSplit, 15000);//&#10022;
+            spawnAnimElements(25, 2.5, '🟄', animSplit, 15000);//&#128964;   &#10022;
             break;
         case 'snow':
             spawnAnimElements(25, 2.5, '', animSplit, 15000);
