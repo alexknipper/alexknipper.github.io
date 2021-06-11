@@ -127,7 +127,7 @@
     left:0%;
     width:100%;
     height:calc(100% - var(--nav-height) - 5em);
-    background-color:rgba(var(--nav-color), .5);
+    background-color:rgba(var(--nav-color), .9);
     padding-top:var(--nav-height);
     padding-bottom:5em;
     overflow-x:hidden;
