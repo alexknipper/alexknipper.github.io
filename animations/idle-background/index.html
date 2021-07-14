@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+ 
+ <meta http-equiv="Content-Type" content="text/html;   charset=utf-8"/>
+ <meta name="keywords" content=""/>
+ <meta name="description" content="<Description>"/>
+ <meta name="author" content="<Author Name Here>"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <title>Idle Background Animation</title>
+ 
+ <link rel="shortcut icon" href="../../_static/images/logo/main_icon.ico?"/>
+
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+ <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cabin:wght@500&family=Dancing+Script:wght@500&family=Great+Vibes&family=Noto+Sans+JP:wght@400&family=Noto+Serif+JP:wght@500&family=Parisienne&family=Roboto&family=Roboto+Slab&family=Tangerine&display=swap" rel="stylesheet">
+
+ <script src="https://kit.fontawesome.com/b657a3b372.js" crossorigin="anonymous"></script>
+ 
+ <link type="text/css" rel="stylesheet" href="../../_static/stylesheets/ak-bg-anim.css"/>
+ <link type="text/css" rel="stylesheet" href="../../_static/stylesheets/style.css"/>
+
+ </head>
+ <body>
+	<div id="ak-bg-anim"></div>
+	<!--HTML tag data goes here-->
+ </body>
+ <script>
+	 function startURLAnim() {
+		 const urlParams = new URLSearchParams(window.location.search);
+		 // Set the background color
+		 if (!!urlParams.get('bgColor')) {
+			 document.body.style.background = urlParams.get('bgColor');
+		 }
+		 // Set the animation
+		 if (!!urlParams.get('animName')) {
+			 startAnimCycle(urlParams.get('animName'));
+		 }
+		 else {
+			 selectAnimFromDate();
+		 }
+	 }
+ </script>
+ <script src="../../_static/scripts/ak-bg-anim.js" onload="startURLAnim();"></script>
+ </html>
