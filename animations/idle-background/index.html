@@ -32,12 +32,12 @@
 	 function startURLAnim() {
 		 const urlParams = new URLSearchParams(window.location.search);
 		 // Set the background color
-		 if (!!urlParams.get('bgColor')) {
-			 document.body.style.background = urlParams.get('bgColor');
+		 if (!!urlParams.get('bg')) {
+			 document.body.style.background = urlParams.get('bg');
 		 }
 		 // Set the animation
-		 if (!!urlParams.get('animName')) {
-			 startAnimCycle(urlParams.get('animName'));
+		 if (!!urlParams.get('anim')) {
+			 startAnimCycle(urlParams.get('anim'));
 		 }
 		 else {
 			 selectAnimFromDate();
