@@ -1,3 +1,25 @@
 /*Academics Page Stylesheet*/
 
-/*There are currently no styles*/
+.academic-entry > img {
+    width:50%;
+    height:auto;
+}
+.academic-entry > h2 {
+    margin-left:3em;
+    text-indent:-1em;
+}
+.academic-entry > p {
+    margin-left:1em;
+    text-indent:-1em;
+}
+
+
+@media only screen and (orientation:landscape), (min-width:1024px) {
+    .academic-entry > img {
+        width:25%;
+    }
+    .academic-entry > p {
+        margin-left:5em;
+        text-indent:-1em
+    }
+}
