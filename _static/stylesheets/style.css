@@ -42,7 +42,7 @@ body
 	font-style:italic;
 	color:white;
 }
-.content > p, .content > p > a
+.content > p, .content > p > a, .content > details
 {
 	color:white;
 	font-family:'Noto Sans JP', sans-serif;
@@ -106,7 +106,7 @@ body
 	{
 		font-size:1.85em;
 	}
-	.content > p, .content > a
+	.content > p, .content > a, .content > details
 	{
 		font-size:1.15em;
 		line-height:1.5;
