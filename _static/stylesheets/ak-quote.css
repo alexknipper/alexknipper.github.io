@@ -1,0 +1,67 @@
+/*
+    ak-quote.css
+    This stylesheet is designed to add an easy quote-of-the-day system to a website. Requires companion script ak-quote.js for full functionality
+    Alex Knipper
+
+    To use, copy the following HTML code:
+    <div id="ak-quote"></div>
+*/
+
+:root
+{
+    --text-color:240, 240, 240;
+    --accent-color:255, 0, 170;
+}
+
+#ak-quote
+{
+    position:relative;
+	width:70%;
+	height:auto;
+	/*max-height:1000em;*/
+	margin-left:10%;
+	margin-bottom:7.5em;
+	overflow:hidden;
+    padding:0em 5% 1em 5%;
+    border:.15em solid white;
+    border-radius:1.5em;
+    box-shadow:0px 0px .75em .1em rgb(var(--accent-color)), 0px 0px .75em .1em rgb(var(--accent-color)) inset;
+}
+#ak-quote > h1
+{
+	font-size:2.25em;
+	font-style:italic;
+	color:rgb(var(--text-color));
+}
+#ak-quote > p
+{
+	color:rgb(var(--text-color));
+    font-size:1.5em;
+	font-style:italic;
+	word-spacing:.01em;
+	line-height:1.75;
+	text-decoration:none;
+}
+
+@media only screen and (orientation:landscape), (min-width:1024px)
+{
+	#ak-quote
+	{
+		width:45%;
+		margin-left:25%;
+		margin-bottom:5em;
+        padding:0em 2.5% 1em 2.5%;
+        border:.15em solid white;
+        border-radius:.75em;
+        box-shadow:0px 0px .5em .1em rgb(var(--accent-color)), 0px 0px .5em .1em rgb(var(--accent-color)) inset;
+	}
+	#ak-quote > h1
+	{
+		font-size:1.85em;
+	}
+    #ak-quote > p
+    {
+        font-size:1.15em;
+		line-height:1.5;
+    }
+}
