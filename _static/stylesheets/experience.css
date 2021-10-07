@@ -1,25 +1,31 @@
 /*Academics Page Stylesheet*/
 
-.academic-entry > img {
+.experience-entry > img {
     width:50%;
     height:auto;
 }
-.academic-entry > h2 {
+.experience-entry > h2 {
     margin-left:3em;
     text-indent:-1em;
 }
-.academic-entry > p {
+.experience-entry > p {
     margin-left:1em;
     text-indent:-1em;
+}
+.experience-entry > details > p {
+    margin-left:1em;
 }
 
 
 @media only screen and (orientation:landscape), (min-width:1024px) {
-    .academic-entry > img {
+    .experience-entry > img {
         width:25%;
     }
-    .academic-entry > p {
+    .experience-entry > p {
         margin-left:5em;
         text-indent:-1em
+    }
+    .experience-entry > details {
+        margin-left:4em;
     }
 }
