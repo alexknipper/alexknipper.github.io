@@ -56,26 +56,26 @@ body
 {
 	text-indent:1em;
 }
-.content > p > a, .content > details > p > a
+.content > p > a, .content > details > a, .content > details > p > a
 {
 	font-size:inherit;
 	word-spacing:inherit;
 	line-height:inherit;
 	text-decoration:none;
 }
-.content > p > a:link, .content > details > p > a:link
+.content > p > a:link, .content > details > a:link, .content > details > p > a:link
 {
 	color:rgb(var(--nav-accent-color))
 }
-.content > p > a:visited, .content > details > p > a:visited
+.content > p > a:visited, .content > details > a:visited, .content > details > p > a:visited
 {
 	color:purple;
 }
-.content > p > a:hover, .content > details > p > a:hover
+.content > p > a:hover, .content > details > a:hover, .content > details > p > a:hover
 {
 	text-decoration:underline;
 }
-.content > p > a:active, .content > details > p > a:active
+.content > p > a:active, .content > details > a:active, .content > details > p > a:active
 {
 	text-decoration:underline;
 }
