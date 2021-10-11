@@ -20,6 +20,10 @@ var quotes = [
         "Dia Kurosawa"
     ],
     [
+        "In this world we inhabit... who can truly be said to live a life free of all woes? Those with a mind and with knowledge will certainly be troubled by all manner of things.",
+        "Madame Ping"
+    ],
+    [
         "Life isn’t just doing things for yourself. It’s possible to live in such a way that other people’s happiness makes you happy too.",
         "Asuna Yuuki"
     ],
