@@ -12,8 +12,24 @@ var quotes = [
         "Eli Ayase"
     ],
     [
+        "Why don't you give it a try? You don't need to come up with a reason, you try things because you want to. Isn't that how you start doing things that you really like?",
+        "Nozomi Tojo"
+    ],
+    [
+        "No one tries to make a miracle happen from the start. They just try as hard as they possibly can to do something. They want to make it work. They want to change something.",
+        "Chika Takami"
+    ],
+    [
+        "I wanted to be captivated by something. I wanted to do my best in something. I wanted to run forward in earnest. But I didn't know what that something was. The indifferent me was blown upwards and I landed upon it.",
+        "Chika Takami"
+    ],
+    [
         "Nothing will get done if you just complain about it.",
         "Riko Sakurauchi"
+    ],
+    [
+        "You should care more about your own feelings. Lying to yourself and doing what other people want you to do will just hurt you.",
+        "Hanamaru Kunikida"
     ],
     [
         "If you've got passion, you can do anything.",
@@ -126,6 +142,10 @@ var quotes = [
     [
         "People who neglect to make efforts or who don’t take any actions at all are always the ones who dream that someday they will suddenly become wildly successful.",
         "Misaki Nakahara"
+    ],
+    [
+        "No one's going to believe just a bunch of words. You've got to take responsibility for your actions.",
+        "Shinka Nibutani"
     ]
 ]
 
