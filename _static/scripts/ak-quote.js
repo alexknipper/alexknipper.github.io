@@ -24,6 +24,10 @@ var quotes = [
         "Madame Ping"
     ],
     [
+        "If I can't make the journey in one giant leap, I'll just have to settle for taking it one small step at a time.",
+        "Sangonomiya Kokomi"
+    ],
+    [
         "Life isn’t just doing things for yourself. It’s possible to live in such a way that other people’s happiness makes you happy too.",
         "Asuna Yuuki"
     ],
