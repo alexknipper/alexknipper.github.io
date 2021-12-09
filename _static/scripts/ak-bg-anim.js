@@ -23,6 +23,7 @@ var animations = {
         "attributes":{
             "color":{
                 "default":["deeppink", "magenta", "purple", "crimson"],
+                "rainbow":["red", "orange", "yellow", "lime", "aqua", "blue", "purple", "magenta"],
                 "vernal":["darkgreen", "springgreen", "mediumseagreen", "green", "pink", "palegoldenrod"],
                 "summer":["aqua", "dodgerblue", "deepskyblue", "gold", "yellow"],
                 "autumnal":["orangered", "orange", "red", "darkred", "goldenrod"],
@@ -68,7 +69,8 @@ var animations = {
 var animationDates = {
     "default":"magic",
     "1/1-1/8":"snow",
-    "12/1-12/24":"snow",
+    "12/1-12/23":"snow",
+    "12/24":"rainbow magic",
     "3/21":"vernal magic",
     "6/21":"summer magic",
     "9/21":"autumnal magic",

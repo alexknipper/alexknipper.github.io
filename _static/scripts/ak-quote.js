@@ -44,6 +44,14 @@ var quotes = [
         "Sangonomiya Kokomi"
     ],
     [
+        "Sure, plenty of people have shown me kindness before. But that doesn't mean I will ever take it for granted. No matter how many times people help me out in life, I will never forget any of them.",
+        "Bennett"
+    ],
+    [
+        "The transcendent and miraculous are not the only things to which human beings aspire. They pursue the everyday, the ordinary, to a far greater extent than I would have ever imagined.",
+        "Albedo"
+    ],
+    [
         "Life isn’t just doing things for yourself. It’s possible to live in such a way that other people’s happiness makes you happy too.",
         "Asuna Yuuki"
     ],
