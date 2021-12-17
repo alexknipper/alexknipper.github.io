@@ -16,6 +16,10 @@ var quotes = [
         "Nozomi Tojo"
     ],
     [
+        "The greatest knowledge you can have is of your own feelings.",
+        "Nozomi Tojo"
+    ],
+    [
         "No one tries to make a miracle happen from the start. They just try as hard as they possibly can to do something. They want to make it work. They want to change something.",
         "Chika Takami"
     ],
