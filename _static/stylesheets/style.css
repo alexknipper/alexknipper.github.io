@@ -56,26 +56,26 @@ body
 {
 	text-indent:1em;
 }
-.content > p > a, .content > details > a, .content > details > p > a
+.content > p > a, .content > details > a, .content > details > p > a, .content > details > summary > a
 {
 	font-size:inherit;
 	word-spacing:inherit;
 	line-height:inherit;
 	text-decoration:none;
 }
-.content > p > a:link, .content > details > a:link, .content > details > p > a:link
+.content > p > a:link, .content > details > a:link, .content > details > p > a:link, .content > details > summary > a:link
 {
 	color:rgb(var(--nav-accent-color))
 }
-.content > p > a:visited, .content > details > a:visited, .content > details > p > a:visited
+.content > p > a:visited, .content > details > a:visited, .content > details > p > a:visited, .content > details > summary > a:visited
 {
-	color:purple;
+	color:#be03fc;
 }
-.content > p > a:hover, .content > details > a:hover, .content > details > p > a:hover
+.content > p > a:hover, .content > details > a:hover, .content > details > p > a:hover, .content > details > summary > a:hover
 {
 	text-decoration:underline;
 }
-.content > p > a:active, .content > details > a:active, .content > details > p > a:active
+.content > p > a:active, .content > details > a:active, .content > details > p > a:active, .content > details > summary > a:active
 {
 	text-decoration:underline;
 }
@@ -89,6 +89,11 @@ body
 .collapsible.expanded
 {
 	height:auto;
+}
+
+details > details
+{
+	padding-left:1.5rem;
 }
 
 @media only screen and (orientation:landscape), (min-width:1024px)

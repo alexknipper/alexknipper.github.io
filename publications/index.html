@@ -57,13 +57,79 @@
 			This page lists out all of the publications I have under my name, as well as a couple of featured publications that I find interesting.
 		</p>
 	</div>
-	<!--<div class="content">
+	<div class="content">
 		<h2>Featured Publications</h2>
-		<p>There are no publications here yet, but check back later to see if that changes!</p>
-	</div>-->
+		<details>
+			<summary>
+				Xue, Linting, Aditya Barua, Noah Constant, Rami Al-Rfou,
+				Sharan Narang, Mihir Kale, Adam Roberts and Colin Raffel.
+				“ByT5: Towards a Token-Free Future with Pre-trained Byte-to-Byte Models.”
+				Transactions of the Association for Computational Linguistics 10 (2021): 291-306.
+				<a href="https://arxiv.org/pdf/2105.13626.pdf">Paper</a>
+			</summary>
+			<details>
+				<summary>TL;DR</summary>
+				<p>
+					This paper shows that a standard Transformer architecture can be used
+					with minimal modifications to process byte sequences, characterize the
+					trade-offs in terms of parameter count, training FLOPs, and inference
+					speed, and shows that byte-level models are competitive with their
+					token-level counterparts.
+				</p>
+			</details>
+			<details>
+				<summary>Abstract</summary>
+				<p>
+					Most widely used pre-trained language models operate on sequences
+					of tokens corresponding to word or subword units. By comparison,
+					token-free models that operate directly on raw text
+					(bytes or characters) have many benefits:
+					They can process text in any language out of the box,
+					they are more robust to noise, and they minimize technical debt
+					by removing complex and error-prone text preprocessing pipelines.
+					Because byte or character sequences are longer than token sequences,
+					past work on token-free models has often introduced new model
+					architectures designed to amortize the cost of operating directly
+					on raw text. In this paper, we show that a standard Transformer
+					architecture can be used with minimal modifications to process
+					byte sequences. We characterize the trade-offs in terms of
+					parameter count, training FLOPs, and inference speed, and show that
+					byte-level models are competitive with their token-level counterparts.
+					We also demonstrate that byte-level models are significantly more
+					robust to noise and perform better on tasks that are sensitive to
+					spelling and pronunciation. As part of our contribution, we release
+					a new set of pre-trained byte-level Transformer models based on the
+					T5 architecture, as well as all code and data used in our experiments.
+				</p>
+			</details>
+		</details>
+	</div>
 	<div class="content">
 		<h2>My Publications</h2>
-		<p>There are no publications here yet, but check back later to see if that changes!</p>
+		<details>
+			<summary>
+				<strong>[AACL 2022]</strong> - <strong>R. Alexander Knipper,</strong>
+				Md. Mahadi Hassan, Mehdi Sadi, Shubhra Kanti Karmaker.
+				"Analogy-Guided Evolutionary Pretraining of Binary Word Embeddings".
+				In AACL/IJCNLP, 2022.
+				<a href="../_static/files/papers/Genetic_Embedding.pdf">Paper</a>
+			</summary>
+			<details>
+				<summary>TL;DR</summary>
+				<p>
+					This paper proposes a novel genetic algorithm to learn
+					the relationships between words from existing word analogy
+					data-sets, carefully making sure that the arithmetic properties
+					of the relationships are preserved.
+				</p>
+			</details>
+			<details>
+				<summary>Abstract</summary>
+				<p>
+					As we begin to see low-powered computing paradigms (Neuromorphic Computing, Spiking Neural Networks, etc.) becoming more popular, learning binary word embeddings has become increasingly important for supporting NLP applications at the edge. Existing binary word embeddings are mostly derived from pretrained real-valued embeddings through different simple transformations, which often break the semantic consistency and the so-called “arithmetic” properties learned by the original, real-valued embeddings. This paper aims to address this limitation by introducing a new approach to learn binary embeddings from scratch, preserving the semantic relationships between words as well as the arithmetic properties of the embeddings themselves. To achieve this, we propose a novel genetic algorithm to learn the relationships between words from existing word analogy data-sets, carefully making sure that the arithmetic properties of the relationships are preserved. Evaluating our generated 16, 32, and 64-bit binary word embeddings on Mikolov’s word analogy task shows that more than 95% of the time, the best fit for the analogy is ranked in the top 5 most similar words in terms of cosine similarity.
+				</p>
+			</details>
+		</details>
 	</div>
  </body>
  <script src="../_static/scripts/themes.js" onload="loadTheme();"></script>
